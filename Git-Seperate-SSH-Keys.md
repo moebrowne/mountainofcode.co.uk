@@ -7,7 +7,7 @@ tags:
 author: Oliver
 ---
 
-I maintain and work on a number of repos on BitBucket for both work and in my own time and use a separate account for
+I maintain and work on a number of repositories on BitBucket for both work and in my own time and use a separate account for
 each. As SSH is used to communicate I use my [Multi SSH Key Manager]() project to manage the keys.
 
 The problem with this is that the remotes for all BitBucket repos have the same username and server `git@bitbucket.org`
@@ -20,13 +20,24 @@ Here's how I did it...
 
 <!-- more -->
 
+## How It Works
+
+The way it works is that all git commands are intercepted with an alias that looks for the config variable `SSH.keypath`
+using the `git config -l` command and if the config has an entry it exports the value of the config entry to an
+environment variable named `GIT_SSH_COMMAND`.
+
+Git uses this environment variable when it calls SSH this allows us pass a path to the key to SSH using the `-i` flag.
+
+## Requirements
+
+The `GIT_SSH_COMMAND` environment variable was only added in Git v2.3 so can only be used in v2.3 and above
 
 
 ##  Notes
 
-- Need certain version of Git >= v2.3
-- Cant use SSH config as the addresses are the same git@github/bitbucket
-- Want to keep GitHub and BitBucket accounts separate
++ Need certain version of Git >= v2.3
++ Cant use SSH config as the addresses are the same git@github/bitbucket
++ Want to keep GitHub and BitBucket accounts separate
 + Have to use separate keys for each account
 + Don't want to link accounts
 + Want to develop on both accounts from a single machine
