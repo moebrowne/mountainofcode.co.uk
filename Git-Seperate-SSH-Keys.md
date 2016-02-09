@@ -28,6 +28,12 @@ environment variable named `GIT_SSH_COMMAND`.
 
 Git uses this environment variable when it calls SSH this allows us pass a path to the key to SSH using the `-i` flag.
 
+## Why Can't You Just Add Another Key To Your .ssh Directory?
+
+Good question. I could just generate a new key and stick it along side my current `id_rsa` key but I am using an SSH key
+manager that I wrote a little while back to help keep keys all separated and all the keys generated are in a
+subdirectory and doesn't look recursively when trying to find the right key to use.
+
 ## Requirements
 
 The `GIT_SSH_COMMAND` environment variable was only added in Git v2.3 so can only be used in v2.3 and above
@@ -41,7 +47,7 @@ The `GIT_SSH_COMMAND` environment variable was only added in Git v2.3 so can onl
 + Have to use separate keys for each account
 + Don't want to link accounts
 + Want to develop on both accounts from a single machine
-- Could add another key to the .ssh dir but Multi SSH key setup wont allow as SSH non recursive
++ Could add another key to the .ssh dir but Multi SSH key setup wont allow as SSH non recursive
 - uses `git config -l` so config cascades from global to repo
 - future dev:
   - understand different remotes
