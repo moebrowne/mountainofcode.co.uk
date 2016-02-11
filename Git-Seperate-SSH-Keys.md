@@ -38,6 +38,11 @@ subdirectory and doesn't look recursively when trying to find the right key to u
 
 The `GIT_SSH_COMMAND` environment variable was only added in Git v2.3 so can only be used in v2.3 and above
 
+## Cascading Config
+
+I used `git config -l` to check for the existence of the config variable and the nice thing about this is that this
+checks not only the config of the current repo but the global Git config to so you could for example define a default
+key globally and override it where you need to
 
 ##  Notes
 
@@ -48,7 +53,7 @@ The `GIT_SSH_COMMAND` environment variable was only added in Git v2.3 so can onl
 + Don't want to link accounts
 + Want to develop on both accounts from a single machine
 + Could add another key to the .ssh dir but Multi SSH key setup wont allow as SSH non recursive
-- uses `git config -l` so config cascades from global to repo
++ uses `git config -l` so config cascades from global to repo
 - future dev:
   - understand different remotes
   - whole profiles
