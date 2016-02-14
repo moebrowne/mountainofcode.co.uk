@@ -5,6 +5,8 @@ tags:
 - Git
 - SSH
 author: Oliver
+photos:
+- /images/git-ssh-keys.jpg
 ---
 
 I maintain and work on a number of repositories on BitBucket for both work and in my own time and use a separate account
