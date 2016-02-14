@@ -44,6 +44,12 @@ I used `git config -l` to check for the existence of the config variable and the
 checks not only the config of the current repo but the global Git config to so you could for example define a default
 key globally and override it where you need to
 
+## Limitations
+
+Currently you can only define one key per repository and that one will be used when communicating with all the remotes,
+i'd like to give have more granular control so I can give a list of remotes or remote names and specify a key for each
+and a default to fall back to.
+
 ##  Notes
 
 + Need certain version of Git >= v2.3
@@ -54,8 +60,8 @@ key globally and override it where you need to
 + Want to develop on both accounts from a single machine
 + Could add another key to the .ssh dir but Multi SSH key setup wont allow as SSH non recursive
 + uses `git config -l` so config cascades from global to repo
-- future dev:
-  - understand different remotes
++ future dev:
+  + understand different remotes
   - whole profiles
 
 
