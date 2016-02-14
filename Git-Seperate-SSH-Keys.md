@@ -49,20 +49,3 @@ key globally and override it where you need to
 Currently you can only define one key per repository and that one will be used when communicating with all the remotes,
 i'd like to give have more granular control so I can give a list of remotes or remote names and specify a key for each
 and a default to fall back to.
-
-##  Notes
-
-+ Need certain version of Git >= v2.3
-+ Cant use SSH config as the addresses are the same git@github/bitbucket
-+ Want to keep GitHub and BitBucket accounts separate
-+ Have to use separate keys for each account
-+ Don't want to link accounts
-+ Want to develop on both accounts from a single machine
-+ Could add another key to the .ssh dir but Multi SSH key setup wont allow as SSH non recursive
-+ uses `git config -l` so config cascades from global to repo
-+ future dev:
-  + understand different remotes
-  - whole profiles
-
-
-
