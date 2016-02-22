@@ -4,7 +4,7 @@ tags:
 - Super Capacitors
 author: Oliver
 photos:
-- /images/raspberry-pi-supercap-psu.jpg
+- /images/RPi-Super-Cap-PSU.jpg
 ---
 
 Super capacitors are awesome, cheap, easily obtainable and can be a little dangerous. They have a massive energy density and are willing to give up their energy very VERY quickly.
@@ -39,6 +39,17 @@ I also added a 7 segment display that showed the voltage currently being output 
 
 ## So How Long Will It Power A Pi For?
 
+The short answer is, well not that long...
+
+I connected up the caps to the buck converter and the converter to the Pi via a little USB volt/current/time meter i use to monitor whats going on and booted the Pi just leaving it completely idle.
+
+I took readings of the voltage on the cap bank, the voltage out of the converter and the total power consumed by the Pi in mAh every minute.
+
+The graph below says it all, it ran for little more than 13 minutes. After only about 10 minutes the buck converters output voltage started to drop despite by efforts to adjust it to compensate, I expected the voltage to drop as the converter has a voltage sink of about 2v but was hoping it wouldn't be quite so soon. As the voltage approached 4v the Pi became unstable, restarting so I unplugged it all.
+
+![Super Capacitor Powered Raspberry Pi Discharge Graph](/images/RPi-Super-Cap-Discharge-Graph.jpg)
+
+I could get more out of the caps as they weren't charged to their maximum 16v to start with but I would only get a little more and the Pi was idle.. I planned to run it again running something like `stress` running, with a wifi adapter connected or with heavy ethernet activity but I think we know what the outcome is going to be...
 
 
 # Notes
