@@ -15,7 +15,7 @@ So I gave it a go and it worked!
 
 <!-- more -->
 
-Before I go any further I wanted to say this isn't an original idea. Credit for that goes to Paul Granjon, see his [blog post](http://www.zprod.org/zwp/making/supercapacitor-raspberry-pi/). But I wanted to give it a go myself and Paul used a voltage regulator rather which can be quite energy wasteful.
+Before I go any further I wanted to say this isn't an original idea. Credit for that goes to Paul Granjon, see his [blog post](http://www.zprod.org/zwp/making/supercapacitor-raspberry-pi/). But I wanted to give it a go myself and Paul used a voltage regulator which can be quite energy wasteful.
 
 ## The Capacitors
 
@@ -27,13 +27,15 @@ The capacitors have a maximum rating of 2.7v each which isn't useful for much bu
 
 ## How Do You Power A Raspberry Pi Off 16v?!
 
-Any one who knows even a little about the Raspberry Pi or USB knows USB runs off 5v not 16v, this is where the step down converter (also known as a buck converter or variable switch mode power supply) comes in, this is a little circuit that takes a variable voltage and outputs a lower voltage.
+Any one who knows even a little about the Raspberry Pi or USB knows USB runs off 5v not 16v, this is where the step down converter (also known as a buck converter or variable switch mode power supply) comes in, this is a little circuit that takes a variable voltage and outputs a lower constant voltage.
 
-In this case I can put in 16v and get out the 5v the Pi wants, perfect. It also has the added benefit that as the voltage on the capacitor bank drops the step down converter maintains the 5v output and will keep doing so until the caps drop below about 7v ish.
+In this case I can put in 16v and get out the 5v that the Pi wants, perfect. It also has the added benefit that as the voltage on the capacitor bank drops the step down converter maintains the 5v output and will keep doing so until the caps drop below about 7v ish.
 
 These converters aren't hard to come across and you can get them easily off the internet, but often they will have a fixed output, that is they will only output one voltage so be sure to get one that outputs 5v.
 
-I opted for [this](http://www.ebay.co.uk/itm/252261788525) kit off eBay, it was only the components and a layout but that's all I needed and wanted as i'll take any excuse to put something together myself. It turned out rather well and all the magic smoke stayed in when I powered it on!
+I opted for [this](http://www.ebay.co.uk/itm/252261788525) kit, it was only the components and a circuit diagram but that's all I needed and wanted as i'll take any excuse to put something together myself. It turned out rather well and none of the magic smoke escaped in when I powered it on, which was nice!
+
+	
 
 I also added a 7 segment display that showed the voltage currently being output and wired in a jumper so I could switch between showing the output voltage and the voltage on the bank. Stuff like that is another reason I like to get the components rather than buying something ready made.
 
