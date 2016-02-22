@@ -35,7 +35,7 @@ These converters aren't hard to come across and you can get them easily off the 
 
 I opted for [this](http://www.ebay.co.uk/itm/252261788525) kit, it was only the components and a circuit diagram but that's all I needed and wanted as i'll take any excuse to put something together myself. It turned out rather well and none of the magic smoke escaped in when I powered it on, which was nice!
 
-	
+![Home built buck converter/Switch mode power supply](/images/RPi-Buck-Converter.jpg)
 
 I also added a 7 segment display that showed the voltage currently being output and wired in a jumper so I could switch between showing the output voltage and the voltage on the bank. Stuff like that is another reason I like to get the components rather than buying something ready made.
 
