@@ -33,7 +33,7 @@ In this case I can put in 16v and get out the 5v that the Pi wants, perfect. It 
 
 These converters aren't hard to come across and you can get them easily off the internet, but often they will have a fixed output, that is they will only output one voltage so be sure to get one that outputs 5v.
 
-I opted for [this](http://www.ebay.co.uk/itm/252261788525) kit, it was only the components and a circuit diagram but that's all I needed and wanted as i'll take any excuse to put something together myself. It turned out rather well and none of the magic smoke escaped in when I powered it on, which was nice!
+I opted for [this](http://www.ebay.co.uk/itm/252261788525) MC34063A based kit, it was only the components and a circuit diagram but that's all I needed and wanted as i'll take any excuse to put something together myself. It turned out rather well and none of the magic smoke escaped in when I powered it on, which was nice!
 
 ![Home built buck converter/Switch mode power supply](/images/RPi-Buck-Converter.jpg)
 
