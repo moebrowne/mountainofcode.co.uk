@@ -45,7 +45,7 @@ I connected up the caps to the buck converter and the converter to the Pi via a 
 
 I took readings of the voltage on the cap bank, the voltage out of the converter and the total power consumed by the Pi in mAh every minute.
 
-The graph below says it all, it ran for little more than 13 minutes. After only about 10 minutes the buck converters output voltage started to drop despite by efforts to adjust it to compensate, I expected the voltage to drop as the converter has a voltage sink of about 2v but was hoping it wouldn't be quite so soon. As the voltage approached 4v the Pi became unstable, restarting so I unplugged it all.
+The graph below says it all, it ran for little more than 13 minutes. After only about 10 minutes the buck converters output voltage started to drop despite by efforts to adjust it to compensate, I expected the voltage to drop as the converter has a minimum voltage difference between the input and output of about 2v but I was hoping it wouldn't be quite so soon. As the voltage approached 4v the Pi became unstable, restarting so I unplugged it all.
 
 ![Super Capacitor Powered Raspberry Pi Discharge Graph](/images/RPi-Super-Cap-Discharge-Graph.jpg)
 
