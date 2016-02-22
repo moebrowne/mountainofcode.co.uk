@@ -56,7 +56,7 @@ I could get more out of the caps as they weren't charged to their maximum 16v to
 
 Super caps are cool no doubt about that but they aren't very practical for portable power supplies. You are far better off with a Lithium ion USB battery bank, they are relatively cheap and some have MASSIVE capacities.
 
-The caps wont go unused though theres always time to throw some sparks or for some light spot welding.
+The caps wont go unused though there's always time to throw some sparks or for some light spot welding.
 
 # Notes
 + Super capacitors are awesome
