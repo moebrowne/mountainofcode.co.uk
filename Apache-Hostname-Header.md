@@ -9,11 +9,17 @@ photos:
 - /images/some-image
 ---
 
-I was recently involved in setting up a complex load balanced Auto-scaling multi server setup and to make life easy wanted set a header that contained the servers hostname so I knew who behind the load balancer satisfied each request.
+I was recently involved in setting up a complex load balanced Auto-scaling multi server setup and to make life easy wanted set a header that contained the servers hostname so I knew which server behind the load balancer satisfied each request.
 
 I thought this would be easy... Nope! But I managed it and here's how... 
 
 <!-- more -->
+
+## The Options
+
+There are 2 options and the one you want depends on which version of Apache you're using. You're more than likely using 2.4.7 as that's the version that ships with Ubuntu 14.04 LTS.
+
+If you are using <2.4.10 you will need to setup an environment variable as described next, other wise you can use the more elegant expression method, see even further below for that one
 
 ## Environment Variables
 
