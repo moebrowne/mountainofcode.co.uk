@@ -29,7 +29,11 @@ There is an `envvars` file, on Ubuntu in `/etc/apache2/envvars`, that defines a 
 export HOSTNAME=$(hostname);
 ```
 
-This sets a new variable we can use in our Apache configs by using the `${HOSTNAME}` syntax.
+You will need to restart Apache, yes restart, reload isn't enough, to get this to sick; once you do you should be able to access the hostname by using `${HOSTNAME}` in your vhosts, making it easy to set the header:
+
+```
+Header set X-Host "%{HOSTNAME}e"
+```
 
 ## Header Expressions
 
