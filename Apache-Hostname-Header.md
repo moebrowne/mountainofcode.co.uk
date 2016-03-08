@@ -30,3 +30,19 @@ export HOSTNAME=$(hostname);
 ```
 
 This sets a new variable we can use in our Apache configs by using the `${HOSTNAME}` syntax.
+
+## Header Expressions
+
+As mentioned above if you are using Apache 2.4.10 or later then life becomes a lot easier as you can pass an expression to the value portion of the `Header` directive.
+
+The expressions we can pass include a bunch of functions we can call (they're listed [here](https://httpd.apache.org/docs/2.4/expr.html#functions)). We're interested in the `file` function as we can use this to read the contents of the `/etc/hostname` file that contains our hostname.
+
+So you will end up with something that looks like this:
+
+```
+Header set X-Host "expr=%{file:/etc/hostname}"
+```
+
+After a reload you should see your `X-Host` header appear. It seems the file is read on every request which would be really useful if the file was changing but I don't know about you but I don't tend to change my hostname all that often so it may add a little unnecessary overhead.
+
+
