@@ -6,7 +6,7 @@ tags:
 - Hostname
 author: Oliver
 photos:
-- /images/some-image
+- /images/Apache-hostname-header.jpg
 ---
 
 I was recently involved in setting up a complex load balanced Auto-scaling multi server setup and to make life easy I wanted to set a header that contained the servers hostname so it was clear which server behind the load balancer satisfied each request.
