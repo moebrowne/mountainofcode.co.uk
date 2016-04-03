@@ -1,0 +1,13 @@
+{
+  "title": "Making Git Repos Use A Specific SSH Key",
+  "date": 1455461260,
+  "tags": [
+    "Shell",
+    "BASH",
+    "SSH",
+    "Git"
+    ],
+  "images": [
+    "/images/git-ssh-keys.jpg"
+  ]
+}
