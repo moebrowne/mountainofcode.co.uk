@@ -26,7 +26,6 @@ If we sent a password reset request at exactly 1472397211.1198 and 430ms later t
 So we can conclude that `uniqid` was called between 1472397211.3698 and 1472397211.5498, just a 180ms window, we can now procedurally generate all the possible tokens. As `uniqid` returns tokens in a hexadecimal format the easiest method is to determine the upper and lower limits then increment in hexadecimal:
 
 ```php
-
 function uniqidGen($timestamp) {
 	return sprintf("%8x%05x",floor($timestamp),($timestamp-floor($timestamp))*1000000));
 }
