@@ -21,7 +21,7 @@ export HOSTNAME=$(hostname);
 You will need to restart Apache, yes restart, reload isn't enough, to get this to stick; once you do you should be able to access the hostname by using `${HOSTNAME}` in your vhosts, making it easy to set the header:
 
 ```
-Header set X-Host "%{HOSTNAME}e"
+Header set X-Host "%{HOSTNAME}"
 ```
 
 ## Header Expressions
