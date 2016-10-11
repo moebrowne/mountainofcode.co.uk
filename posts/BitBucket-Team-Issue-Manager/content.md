@@ -21,3 +21,9 @@ To display all the issues together I made use of [Data Tables](https://www.datat
 
 All I  wanted to change was to make some of the column headings into dropdowns that filtered the table based on the selected value and add links to each of the rows to BitBucket, both much much harder than you would think.
 
+
+## Conclusion
+
+While I wish BitBucket would add the functionality we needed to their interface this was a good solution and a fun little project and will likely only get better over time.
+
+Check out the code on [GitHub](https://github.com/moebrowne/BitBucket-Team-Issue-Manger)
