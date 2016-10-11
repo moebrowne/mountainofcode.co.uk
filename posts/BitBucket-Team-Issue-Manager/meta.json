@@ -1,7 +1,8 @@
 {
-  "title": "BitBucket Team Issue Manager",
-  "date": 0,
+  "title": "BitBucket Team Issue Management",
+  "date": 1476221667,
   "tags": [
-    "BitBucket"
+    "BitBucket",
+    "API"
     ]
 }
