@@ -12,15 +12,20 @@ Then I found the source code on GitHub and the last line in the README contained
 
 <!-- more -->
 
-- Test site: https://u2f.bin.coffee/
-- Plugin
-  - Download: https://addons.mozilla.org/en-US/firefox/addon/u2f-support-add-on/
-  - Source: https://github.com/prefiks/u2f4moz
-- Always just says "Please plug in your U2F device"
-- Need to add udev rules from Github (https://github.com/Yubico/libu2f-host/blob/master/70-u2f.rules)
-  - `/lib/udev/rules.d/70-u2f.rules`
-  - `udevadm control --reload-rules && udevadm trigger`
-  - Restart Firefox
-  - Copy of official rule list (https://github.com/Yubico/libu2f-host/blob/master/70-u2f.rules)
-  - Older rule set for udev older than 188 here: https://github.com/Yubico/libu2f-host/blob/master/70-old-u2f.rules
-    - How do you get the version?
+## "Permissions tweaks for Linux"
+
+The very last section of the README in the [U2F Support Extensions repo](https://github.com/prefiks/u2f4moz)
+ is entitled "Permissions tweaks for Linux" and contains a link to a list of uDev rules supplied by 
+ Yubico that need to be added for Firefox to be allowed to access Yubikeys on unix systems.
+
+## The Where & How
+
+The udev rules required can be copied from the [Yubico/libu2f-host](https://github.com/Yubico/libu2f-host/blob/master/70-u2f.rules)
+ repo into `/lib/udev/rules.d/70-u2f.rules` on your local system. Once copied there the new rules can be
+ reloaded using the following command, which needs to be run as root:
+
+```
+udevadm control --reload-rules && udevadm trigger
+```
+
+Now once Firefox is restarted it should be able to talk to a Yubikey and pass the [U2F support checker](https://u2f.bin.coffee/)?
