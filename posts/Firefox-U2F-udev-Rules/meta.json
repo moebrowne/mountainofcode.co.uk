@@ -1,8 +1,10 @@
 {
-  "title": "Pi Zero Micro Pirate Box",
-  "date": 1494844474,
+  "title": "2FA In Firefox with Yubikey",
+  "date": 1496658767,
   "tags": [
-    "Raspberry Pi",
-    "WiFi"
-    ]
+    "U2F",
+    "2FA",
+    "Firefox",
+    "Security"
+  ]
 }
