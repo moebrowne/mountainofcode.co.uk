@@ -1,5 +1,14 @@
 
+For my [Raspberry Pi Image Manager](https://github.com/moebrowne/RPi-image-manager) project I wanted 
+ to show a progress bar as an image is downloaded. This was easy as a simple `HEAD` request would 
+ include in the response a `Content-Length` header telling me the size and allowing progress to be 
+ calculated.
 
+This worked until I wanted to include the RetroPie image. The RetroPie devs store their images on
+ GitHub, not a problem you might think, business as normal. GitHub however don't allow `HEAD` 
+ requests to downloads, no idea why. This meant however I couldn't calculate the download progress.
+
+At least not without some hackery...
 
 <!-- more -->
 
