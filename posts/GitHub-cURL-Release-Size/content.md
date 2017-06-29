@@ -6,7 +6,8 @@ For my [Raspberry Pi Image Manager](https://github.com/moebrowne/RPi-image-manag
 
 This worked until I wanted to include the RetroPie image. The RetroPie devs store their images on
  GitHub, not a problem you might think, business as normal. GitHub however don't allow `HEAD` 
- requests to downloads, no idea why. This meant however I couldn't calculate the download progress.
+ requests to downloads, no idea why. So now I had no way of getting the image size without downloading
+ the whole image.
 
 At least not without some hackery...
 
