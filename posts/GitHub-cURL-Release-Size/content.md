@@ -13,6 +13,12 @@ At least not without some hackery...
 
 <!-- more -->
 
+## Isn't There An API For This?
+
+Yes. GitHub does expose an API that allows you to fetch a JSON object that represents everything you
+ could want to know about repo downloads but I wanted something simple and easy to access and that 
+ didn't require decoding a JSON object.
+
 - Doesn't accept HEAD requests
 - Cant seem to get just headers with cURL from a GET request
 - Can download a couple of bytes and inspect `Content-Range` header
