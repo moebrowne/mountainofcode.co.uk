@@ -13,6 +13,13 @@ At least not without some hackery...
 
 <!-- more -->
 
+## Partial Requests To The Rescue
+
+While we don't want to get all the data, a `GET` request does contain the `Content-Length` header
+ we're after. Fortunately we don't have to get all the data, we can make a partial request. Using the
+ `Content-Range` header we can instruct GitHub to send us only a small amount of the data but all the
+ headers.
+
 ## Isn't There An API For This?
 
 Yes. GitHub does expose an API that allows you to fetch a JSON object that represents everything you
