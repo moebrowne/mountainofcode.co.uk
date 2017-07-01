@@ -26,9 +26,9 @@ While we don't want to get all the data, a `GET` request does contain the `Conte
 curl -L -i -r 0-1 https://github.com/release/download/url
 ```
 
-The important part is `-r 0-1`. This causes cURL to send a `Content-Range` header with the value
- `0-1` which means "get me the first byte only". Now we have easy access to the `Content-Length`
- header and we only have to download an additional byte.
+The important part is `-r 0-1`. This causes cURL to send a `Content-Range` header with the value `0-1`
+ which means "get me the first byte only". Now we have easy access to the `Content-Length` header and
+ we only have to download an additional byte.
 
 ## Isn't There An API For This?
 
