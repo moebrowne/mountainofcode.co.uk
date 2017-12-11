@@ -8,9 +8,9 @@ This project fixes that.
 
 ## Safely Testing A Permanently Deletion Script
 
-How do you safely test a script that's purpose is to remove files forever? I started by not calling
-`shred` at all and replaced it with `echo` and `ls` this only took me so far. I needed to test the
-real thing and this is where Docker stepped in. Running a test container is so easy:
+How do you safely test a script that's purpose is to remove files forever? I started by not
+calling `shred` at all and replaced it with `echo` and `ls` this only took me so far. I needed
+to test the real thing and this is where Docker stepped in. Running a test container is so easy:
 
 ```
 docker run -it --rm -v /project/path/recursive-shred/:/tmp/project ubuntu:xenial bash
