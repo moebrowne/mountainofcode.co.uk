@@ -24,8 +24,8 @@ In the same way that `rm` wont delete `/`
 
 ## Generating Test Data
 
-I needed files and directories to test the script on and I quickly grew tired of manually running
-`mkdir` and `touch` so used bash expansion to quickly generate a whole tree structure:
+I needed files and directories to test the script on and I quickly grew tired of manually running `mkdir`
+and `touch` so used bash expansion to quickly generate a whole tree structure:
 
 ```
 mkdir -p /tmp/data/{alpha/{alpha/,bravo/,charlie/},bravo/{,bravo/,charlie/},charlie/{alpha/,bravo/,charlie/}}
