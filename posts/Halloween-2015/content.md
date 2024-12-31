@@ -1,1 +1,0 @@
-[Now with added Thermite](https://www.youtube.com/watch?v=g5vVfUbu3yA)

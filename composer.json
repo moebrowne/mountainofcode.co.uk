@@ -1,0 +1,15 @@
+{
+    "name": "moebrowne/mountainofcode.co.uk",
+    "type": "project",
+    "require": {
+        "php": "^8.4",
+        "league/commonmark": "^2.6",
+        "ext-mbstring": "*",
+        "tempest/highlight": "^2.11"
+    },
+    "autoload": {
+        "psr-4": {
+            "MoeBrowne\\": "src"
+        }
+    }
+}
