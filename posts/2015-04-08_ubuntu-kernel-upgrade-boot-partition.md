@@ -18,7 +18,7 @@ There's an easy if a little dangerous fix to be found on the [AskUbuntu](http://
 TL;DR version:
 
 ```
-sudo apt-get purge linux-image-3.13.0-{X,Y,Z}-generic`
+sudo apt-get purge linux-image-3.13.0-{X,Y,Z}-generic
 ```
 
 Where `X` `Y` and `Z` are the versions you want to delete.
