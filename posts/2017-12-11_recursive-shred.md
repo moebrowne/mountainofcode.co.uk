@@ -3,13 +3,13 @@
 #one hour hack
 #security
 
-I have [previously](/2015/10/19/Securely-Deleting-Files-In-Caja/) setup an easy way to permanently
+I have [previously](/caja-file-shred) set up an easy way to permanently
 delete files from within Caja but the only downside was that it couldn't delete recursively, which
 meant often manually selecting a number of files which was a pain.
 
 This project fixes that.
 
-## Safely Testing A Permanently Deletion Script
+## Safely Testing A Permanent Deletion Script
 
 How do you safely test a script that's purpose is to remove files forever? I started by not
 calling `shred` at all and replaced it with `echo` and `ls` this only took me so far. I needed

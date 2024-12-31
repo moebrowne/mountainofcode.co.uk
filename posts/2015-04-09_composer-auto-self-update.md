@@ -11,11 +11,13 @@ What better tool is there to periodically run a script than cron. It's as simple
 ```bash
 #!/bin/sh
     
-# Update Composer to the lastest version
+# Update Composer to the latest version
 composer self-update
 ```
 
 It's probably a good idea to redirect the output to a log file with a timestamp but i'm not that worried. Composer complains at you if it's older than 30 days anyway:
 
-    Warning: This development build of composer is over 30 days old.
-    It is recommended to update it by running "composer self-update" to get the latest version.
+```
+Warning: This development build of composer is over 30 days old.
+It is recommended to update it by running "composer self-update" to get the latest version.
+```
