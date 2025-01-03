@@ -4,6 +4,10 @@ declare(strict_types=1);
 
 $path = $_SERVER['REQUEST_URI'];
 
+if ($path !== '/') {
+    $path = rtrim($path, '/');
+}
+
 match($path) {
     '/' => require __DIR__ . '/../views/post-list.php',
     '/2015/10/19/Easily-Accessing-Arguments-In-A-Shell-Script' => header('Location: /bash-argument-parser', response_code: 308),
