@@ -83,6 +83,7 @@ ul {
 
 iframe {
 	border: 0;
+	display: block;
 }
 
 
