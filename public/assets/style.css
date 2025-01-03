@@ -225,20 +225,17 @@ body > article x-body pre {
 	padding: 12px 12px 12px 70px;
 }
 
-body > article x-body img {
-	width: calc(100% + 140px);
-}
-
 body > article x-body table {
-	width: calc(100% + 140px);
 	background: #F2F2F2;
 	padding: 10px 10px 10px 70px;
 	text-align: left;
 	margin: 0 -70px 0;
 }
 
+.full-bleed,
 body > article x-body pre,
 body > article x-body img {
+	width: calc(100% + 140px);
 	margin-right: -70px;
 	margin-left: -70px;
 }
@@ -251,15 +248,17 @@ body > article x-body img {
 		margin-left: -10px;
 	}
 
+	.full-bleed,
+	body > article x-body table,
 	body > article x-body img {
 		margin-right: -10px;
 		margin-left: -10px;
 		width: calc(100% + 20px);
 	}
-	body > article x-body table {
+	 {
 		margin-right: -10px;
 		margin-left: -10px;
-		 width: calc(100% + 20px);
+ 		width: calc(100% + 20px);
 	 }
 }
 
