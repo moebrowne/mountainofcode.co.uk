@@ -4,8 +4,10 @@ declare(strict_types=1);
 
 $path = $_SERVER['REQUEST_URI'];
 
-if ($path !== '/') {
-    $path = rtrim($path, '/');
+// Remove trailing slashes
+if ($path !== rtrim($path, '/') && $path !== '/') {
+    header('Location: ' . rtrim($path, '/'), response_code: 308);
+    exit;
 }
 
 match($path) {
