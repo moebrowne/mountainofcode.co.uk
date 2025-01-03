@@ -81,6 +81,10 @@ ul {
 	list-style-type: circle;
 }
 
+iframe {
+	border: 0;
+}
+
 
 
 
