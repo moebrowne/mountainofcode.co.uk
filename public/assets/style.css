@@ -73,6 +73,7 @@ a {
 }
 
 img {
+	display: block;
 	width: 100%;
 	height: auto;
 }
@@ -184,6 +185,10 @@ body > article {
 	margin: 0 auto 50px;
 	max-width: 700px;
 	padding: 40px 70px 30px;
+}
+
+body > article:has(:last-child > img, pre:last-child, .full-bleed:last-child) {
+	padding-bottom: 0;
 }
 
 @media screen and (max-device-width: 560px) {
