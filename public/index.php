@@ -23,7 +23,6 @@ match($path) {
     '/2015/08/21/MATE-Places-Menu-Collapsing' => header('Location: /mate-places-menu-collapsing', response_code: 308),
     '/2015/08/31/Running-A-Script-When-Locking-MATE' => header('Location: /mate-run-on-lock', response_code: 308),
     '/2015/04/24/Multi-SSH-Key-Manager' => header('Location: /multi-ssh-key-manager', response_code: 308),
-    '/2015/12/03/Multi-SSH-Key-Manager' => header('Location: /php-assets-directory-security', response_code: 308),
     '/2015/08/26/Capturing-A-Whole-HTTP-Request-With-PHP' => header('Location: /php-capture-whole-request', response_code: 308),
     '/2016/09/26/PHPs-uniqid()-Does-Not-Generate-Random-IDs' => header('Location: /php-uniqid-doesnt-generate-random-ids', response_code: 308),
     '/2017/05/15/Pi-Zero-Micro-Pirate-Box' => header('Location: /pi-zero-micro-pirate-box', response_code: 308),
