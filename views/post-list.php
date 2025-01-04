@@ -6,7 +6,10 @@ require __DIR__ . '/../vendor/autoload.php';
 
 $postPaths = array_reverse(glob(__DIR__ . '/../posts/*'));
 
-$posts = array_map(fn (string $postPath): Post => new Post($postPath), $postPaths);
+$posts = array_map(
+    fn (string $postPath): Post => new Post($postPath),
+    $postPaths,
+);
 
 ?>
 <?php require __DIR__ . "/../views/head.php"; ?>

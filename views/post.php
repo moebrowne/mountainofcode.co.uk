@@ -4,9 +4,11 @@ use MoeBrowne\Post;
 
 require __DIR__ . '/../vendor/autoload.php';
 
+$postPaths = array_reverse(glob(__DIR__ . '/../posts/*'));
+
 $posts = array_map(
     fn (string $postPath): Post => new Post($postPath),
-    array_reverse(glob(__DIR__ . '/../posts/*')),
+    $postPaths,
 );
 
 /** @var Post $post */
