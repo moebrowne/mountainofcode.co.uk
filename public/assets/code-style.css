@@ -1,10 +1,9 @@
-pre {
+pre, code {
     color: #F8F8F2;
     background-color: #282A36;
 }
 
-:not(pre) > code {
-    background: #eee;
+code {
     padding: 2px 5px;
     margin: 0 2px;
     font-size: 0.9em;
