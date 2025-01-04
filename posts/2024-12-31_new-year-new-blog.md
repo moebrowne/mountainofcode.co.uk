@@ -27,8 +27,8 @@ single standard markdown file, no `meta.json`, no front matter, no intros. The l
 - Remove the tags sidebar
 - Remove the header images, pretty but too much effort
 - Update background to show corrupt cells from the start
-- Use [`league/commonmark`](https://commonmark.thephpleague.com) parser
-- Use [`tempest/highlight`](https://tempestphp.com/docs/highlight/getting-started/) for the code block highlighting
+- Use [league/commonmark](https://commonmark.thephpleague.com) parser
+- Use [tempest/highlight](https://tempestphp.com/docs/highlight/getting-started/) for the code block highlighting
 - Must work with browser reader mode
 
 It took maybe 4 hours to make all the changes. It was important to make the list up front, If I had made the
