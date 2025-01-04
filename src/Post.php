@@ -14,8 +14,10 @@ use League\CommonMark\Node\Query;
 use League\CommonMark\Output\RenderedContentInterface;
 use MoeBrowne\MarkdownTag\MarkdownTagExtension;
 use MoeBrowne\MarkdownTag\Tag;
+use MoeBrowne\OpenscadLanguage\OpenscadLanguage;
 use Stringable;
 use Tempest\Highlight\CommonMark\HighlightExtension;
+use Tempest\Highlight\Highlighter;
 
 final class Post implements Stringable
 {
@@ -27,10 +29,13 @@ final class Post implements Stringable
     {
         $markdownSource = file_get_contents($filePath);
 
+        $highlighter = new Highlighter()
+            ->addLanguage(new OpenscadLanguage());
+
         $environment = new Environment()
             ->addExtension(new CommonMarkCoreExtension())
             ->addExtension(new MarkdownTagExtension())
-            ->addExtension(new HighlightExtension())
+            ->addExtension(new HighlightExtension($highlighter))
             ->addExtension(new TableExtension())
         ;
 
