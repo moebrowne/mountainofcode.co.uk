@@ -52,7 +52,7 @@ http_response_code(500);
         <?php foreach ($exception->getTrace() as $trace) : ?>
             <?php if (str_starts_with($trace['function'], '{closure:')) {
                 $closure = str_replace(['{closure:', '}'], '', $trace['function']);
-                [$filePath, $lineNumber] = explode(':', $closure);
+                [$filePath, $lineNumber] = explode(':', $closure, 2);
 
                 $trace = [
                     'class' => 'anonymous fn',
