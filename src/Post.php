@@ -15,6 +15,7 @@ use League\CommonMark\Output\RenderedContentInterface;
 use MoeBrowne\MarkdownTag\MarkdownTagExtension;
 use MoeBrowne\MarkdownTag\Tag;
 use MoeBrowne\OpenscadLanguage\OpenscadLanguage;
+use MoeBrowne\SmartImage\SmartImageExtension;
 use Stringable;
 use Tempest\Highlight\CommonMark\HighlightExtension;
 use Tempest\Highlight\Highlighter;
@@ -34,6 +35,7 @@ final class Post implements Stringable
 
         $environment = new Environment()
             ->addExtension(new CommonMarkCoreExtension())
+            ->addExtension(new SmartImageExtension())
             ->addExtension(new MarkdownTagExtension())
             ->addExtension(new HighlightExtension($highlighter))
             ->addExtension(new TableExtension())
