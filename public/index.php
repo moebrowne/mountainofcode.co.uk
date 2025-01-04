@@ -2,6 +2,8 @@
 
 declare(strict_types=1);
 
+set_exception_handler(fn (Throwable $exception) => require __DIR__ . '/../views/error.php');
+
 $path = $_SERVER['REQUEST_URI'];
 
 // Remove trailing slashes
