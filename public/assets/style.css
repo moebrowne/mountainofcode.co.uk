@@ -253,7 +253,8 @@ body > article x-body table {
 
 .full-bleed,
 body > article x-body pre,
-body > article x-body img {
+body > article x-body img,
+body > article x-body table {
 	width: calc(100% + 140px);
 	margin-right: -70px;
 	margin-left: -70px;
