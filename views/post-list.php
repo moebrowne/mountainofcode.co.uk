@@ -47,6 +47,7 @@ $posts = array_map(
                 </x-tag-list>
             </article>
         <?php endforeach; ?>
+        <a class="rss-feed-link" href="/feed.atom"><img src="/assets/rss.svg" alt="RSS Feed"/></a>
     </x-post-list>
 
 <?php require __DIR__ . "/../views/foot.php"; ?>

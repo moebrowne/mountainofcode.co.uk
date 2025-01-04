@@ -91,6 +91,7 @@ iframe {
 
 
 x-post-list {
+	position: relative;
 	display: block;
 	background: #FFF;
 	padding: 20px;
@@ -131,6 +132,14 @@ x-post-list > article x-tag-list {
 	x-post-list > article x-tag-list {
 		display: none;
 	}
+}
+
+x-post-list > .rss-feed-link {
+	position: absolute;
+	top: 4px;
+	right: 4px;
+	width: 16px;
+	height: 16px;
 }
 
 

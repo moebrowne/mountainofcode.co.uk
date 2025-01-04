@@ -12,6 +12,7 @@ if ($path !== rtrim($path, '/') && $path !== '/') {
 
 match($path) {
     '/' => require __DIR__ . '/../views/post-list.php',
+    '/feed.atom' => require __DIR__ . '/../views/feed.php',
     '/2015/10/19/Easily-Accessing-Arguments-In-A-Shell-Script' => header('Location: /bash-argument-parser', response_code: 308),
     '/2015/08/03/Download-Single-File-From-Private-BitBucket-Repo' => header('Location: /bitbucket-download-file', response_code: 308),
     '/2016/10/11/BitBucket-Team-Issue-Management' => header('Location: /bitbucket-team-issue-manager', response_code: 308),
