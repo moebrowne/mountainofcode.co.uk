@@ -31,6 +31,7 @@ http_response_code(500);
 </script>
 
 <div style="
+    position: fixed;
     font-family: 'Share Tech Mono', monospace;
     font-size: 7rem;
     text-shadow: 0 0 10px 40px #000;
