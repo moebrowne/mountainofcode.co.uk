@@ -86,7 +86,7 @@ final class Post implements Stringable
     {
         $content = $this->post->getContent();
 
-        return str_replace('<h1>' . $this->getTitle() . '</h1>', '', $content);
+        return str_replace('<h1>' . htmlentities($this->getTitle()) . '</h1>', '', $content);
     }
 
     public function __toString(): string
