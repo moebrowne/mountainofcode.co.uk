@@ -71,14 +71,10 @@ final class Post implements Stringable
 
     public function getTitle(): string
     {
-//        new HeadingPermalink()->
-        $node = new Query()
+        return new Query()
             ->where(Query::type(Heading::class))
             ->findOne($this->post->getDocument())
             ?->firstChild()
-        ;
-
-        return $node
             ->getLiteral() ?? throw new \Exception('No title found');
     }
 
