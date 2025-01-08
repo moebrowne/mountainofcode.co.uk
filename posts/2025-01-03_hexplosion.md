@@ -2,6 +2,7 @@
 
 #demo
 #hexaons are the bestagons
+#project
 
 A demo of an old project. Source is here: [https://github.com/moebrowne/hexplosion](https://github.com/moebrowne/hexplosion)
 
