@@ -211,7 +211,7 @@ body > article {
 	padding: 40px 70px 30px;
 }
 
-body > article:has(:last-child > img, pre:last-child, .full-bleed:last-child) {
+body > article:has(:last-child > img, pre:last-child, .full-bleed:last-child, :last-child > x-3d-model) {
 	padding-bottom: 0;
 }
 
