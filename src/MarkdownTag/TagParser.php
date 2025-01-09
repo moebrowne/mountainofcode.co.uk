@@ -12,13 +12,13 @@ final class TagParser implements InlineParserInterface
     {
         return InlineParserMatch::join(
             InlineParserMatch::string('#'),
-            InlineParserMatch::regex('[^\n]+'),
+            InlineParserMatch::regex('([^\n]+)'),
         );
     }
 
     public function parse(InlineParserContext $inlineContext): bool
     {
-        $inlineContext->getContainer()->appendChild(new Tag(mb_substr($inlineContext->getFullMatch(), 1)));
+        $inlineContext->getContainer()->appendChild(new Tag($inlineContext->getMatches()[2]));
         $cursor = $inlineContext->getCursor();
         $cursor->advanceBy($inlineContext->getFullMatchLength());
 
