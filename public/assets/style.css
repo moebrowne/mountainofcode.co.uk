@@ -79,7 +79,7 @@ img {
 	background: #fafafa;
 	max-height: 350px;
 	object-fit: contain;
-	padding: 40px;
+	padding: 20px;
 }
 
 ul {
@@ -281,7 +281,6 @@ body > article x-body table {
 	}
 
 	body > article x-body img {
-		padding: 20px;
 		max-height: 250px;
 	}
 }
