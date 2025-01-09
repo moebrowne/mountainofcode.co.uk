@@ -79,6 +79,7 @@ img {
 	background: #fafafa;
 	max-height: 350px;
 	object-fit: contain;
+	padding: 40px;
 }
 
 ul {
@@ -278,11 +279,11 @@ body > article x-body table {
 		margin-left: -10px;
 		width: calc(100% + 20px);
 	}
-	 {
-		margin-right: -10px;
-		margin-left: -10px;
- 		width: calc(100% + 20px);
-	 }
+
+	body > article x-body img {
+		padding: 20px;
+		max-height: 250px;
+	}
 }
 
 
