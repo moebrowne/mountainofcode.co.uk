@@ -16,6 +16,7 @@ use MoeBrowne\MarkdownTag\MarkdownTagExtension;
 use MoeBrowne\MarkdownTag\Tag;
 use MoeBrowne\OpenscadLanguage\OpenscadLanguage;
 use MoeBrowne\SmartImage\SmartImageExtension;
+use MoeBrowne\StlModelViewer\StlModelViewerExtension;
 use Stringable;
 use Tempest\Highlight\CommonMark\HighlightExtension;
 use Tempest\Highlight\Highlighter;
@@ -39,6 +40,7 @@ final class Post implements Stringable
             ->addExtension(new MarkdownTagExtension())
             ->addExtension(new HighlightExtension($highlighter))
             ->addExtension(new TableExtension())
+            ->addExtension(new StlModelViewerExtension())
         ;
 
         $this->post = new MarkdownConverter($environment)

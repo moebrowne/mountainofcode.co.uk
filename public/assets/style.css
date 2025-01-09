@@ -91,6 +91,17 @@ iframe {
 	display: block;
 }
 
+x-3d-model {
+	display: block;
+	background: #fafafa;
+	width: 100%;
+	aspect-ratio: 5/2;
+}
+
+x-3d-model > canvas {
+	width: 100% !important;
+	height: 100% !important;
+}
 
 
 
@@ -258,6 +269,7 @@ body > article x-body table {
 .full-bleed,
 body > article x-body pre,
 body > article x-body img,
+body > article x-body x-3d-model,
 body > article x-body table {
 	width: calc(100% + 140px);
 	margin-right: -70px;
@@ -274,7 +286,8 @@ body > article x-body table {
 
 	.full-bleed,
 	body > article x-body table,
-	body > article x-body img {
+	body > article x-body img,
+	body > article x-body x-3d-model {
 		margin-right: -10px;
 		margin-left: -10px;
 		width: calc(100% + 20px);
