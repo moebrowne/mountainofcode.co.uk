@@ -18,9 +18,13 @@ final class TagParser implements InlineParserInterface
 
     public function parse(InlineParserContext $inlineContext): bool
     {
-        $inlineContext->getContainer()->appendChild(new Tag($inlineContext->getMatches()[2]));
-        $cursor = $inlineContext->getCursor();
-        $cursor->advanceBy($inlineContext->getFullMatchLength());
+        $inlineContext
+            ->getContainer()
+            ->appendChild(new Tag($inlineContext->getMatches()[2]));
+
+        $inlineContext
+            ->getCursor()
+            ->advanceBy($inlineContext->getFullMatchLength());
 
         return true;
     }
