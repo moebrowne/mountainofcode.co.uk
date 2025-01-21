@@ -2,10 +2,9 @@
 
 #automation
 #bash
-#f@h
+#folding@home
 #linux
 #mate
-#shell
 #torrent
 
 My PC is on literally 24/7 as I run a FAH (Folding At Home) client and Transmission to seed the RPi and Ubuntu image 
