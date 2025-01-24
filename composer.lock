@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "63d9c230338f3a79e28e8b2830350354",
+    "content-hash": "d3fe1989e84d0681fc59e1dc35f06052",
     "packages": [
         {
             "name": "dflydev/dot-access-data",
@@ -480,16 +480,16 @@
         },
         {
             "name": "pierresh/simca",
-            "version": "0.0.4",
+            "version": "dev-temp",
             "source": {
                 "type": "git",
-                "url": "https://github.com/pierresh/simca.git",
-                "reference": "7382bd63111dee45336dd4c7c81a0beaa7683ba3"
+                "url": "https://github.com/moebrowne/simca.git",
+                "reference": "bf5e674201783a1ece74f1d1680e939c7e30d5a9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/pierresh/simca/zipball/7382bd63111dee45336dd4c7c81a0beaa7683ba3",
-                "reference": "7382bd63111dee45336dd4c7c81a0beaa7683ba3",
+                "url": "https://api.github.com/repos/moebrowne/simca/zipball/bf5e674201783a1ece74f1d1680e939c7e30d5a9",
+                "reference": "bf5e674201783a1ece74f1d1680e939c7e30d5a9",
                 "shasum": ""
             },
             "require": {
@@ -510,7 +510,25 @@
                     "Pierresh\\Simca\\": "src/"
                 }
             },
-            "notification-url": "https://packagist.org/downloads/",
+            "scripts": {
+                "refactor": [
+                    "rector"
+                ],
+                "test": [
+                    "./vendor/bin/pest --watch"
+                ],
+                "test-one-run": [
+                    "./vendor/bin/pest"
+                ],
+                "stan": [
+                    "./vendor/bin/phpstan analyse --ansi "
+                ],
+                "quality": [
+                    "@refactor --dry-run",
+                    "@stan",
+                    "@test-one-run"
+                ]
+            },
             "license": [
                 "MIT"
             ],
@@ -526,10 +544,9 @@
                 "svg"
             ],
             "support": {
-                "issues": "https://github.com/pierresh/simca/issues",
-                "source": "https://github.com/pierresh/simca/tree/0.0.4"
+                "source": "https://github.com/moebrowne/simca/tree/temp"
             },
-            "time": "2024-07-22T14:29:14+00:00"
+            "time": "2025-01-21T22:54:53+00:00"
         },
         {
             "name": "psr/event-dispatcher",
@@ -790,7 +807,9 @@
     "packages-dev": [],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": [],
+    "stability-flags": {
+        "pierresh/simca": 20
+    },
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
