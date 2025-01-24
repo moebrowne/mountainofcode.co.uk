@@ -31,6 +31,17 @@ final class Post implements Stringable
     {
         $markdownSource = file_get_contents($filePath);
 
+        $markdownSource = preg_replace_callback(
+            "#```php\n//\[eval\](?<code>.+?)```#s",
+            function (array $matches): string {
+                ob_start();
+                eval($matches['code']);
+
+                return ob_get_clean();
+            },
+            $markdownSource,
+        );
+
         $highlighter = new Highlighter()
             ->addLanguage(new OpenscadLanguage());
 
