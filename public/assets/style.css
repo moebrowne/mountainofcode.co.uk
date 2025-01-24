@@ -91,6 +91,7 @@ ul {
 iframe {
 	border: 0;
 	display: block;
+	background: ghostwhite;
 }
 
 x-3d-model {
