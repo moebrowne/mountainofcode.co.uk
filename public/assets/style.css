@@ -306,6 +306,7 @@ body > article x-body svg {
 	}
 
 	.full-bleed,
+	body > article x-body pre,
 	body > article x-body table,
 	body > article x-body img,
 	body > article x-body x-3d-model,
