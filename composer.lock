@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "df0f68161c68e71c0715f0911a721a5c",
+    "content-hash": "63d9c230338f3a79e28e8b2830350354",
     "packages": [
         {
             "name": "dflydev/dot-access-data",
@@ -271,6 +271,66 @@
             "time": "2022-12-11T20:36:23+00:00"
         },
         {
+            "name": "meyfa/php-svg",
+            "version": "v0.15.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/meyfa/php-svg.git",
+                "reference": "dc2ef9c62807b8b339899b97f6597b770f40d492"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/meyfa/php-svg/zipball/dc2ef9c62807b8b339899b97f6597b770f40d492",
+                "reference": "dc2ef9c62807b8b339899b97f6597b770f40d492",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.4.0"
+            },
+            "require-dev": {
+                "meyfa/phpunit-assert-gd": "^v3.0.0",
+                "phpmd/phpmd": "^2.15.0",
+                "phpunit/phpunit": "^9.6.16",
+                "rector/rector": "^1.0"
+            },
+            "suggest": {
+                "ext-gd": "Needed to rasterize images",
+                "ext-simplexml": "Needed to read SVG strings and files"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "SVG\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Fabian Meyer",
+                    "homepage": "https://meyfa.net"
+                }
+            ],
+            "description": "Read, edit, write, and render SVG files with PHP",
+            "homepage": "https://github.com/meyfa/php-svg",
+            "keywords": [
+                "svg"
+            ],
+            "support": {
+                "issues": "https://github.com/meyfa/php-svg/issues",
+                "source": "https://github.com/meyfa/php-svg/tree/v0.15.1"
+            },
+            "funding": [
+                {
+                    "url": "https://github.com/meyfa",
+                    "type": "github"
+                }
+            ],
+            "time": "2024-06-28T12:57:28+00:00"
+        },
+        {
             "name": "nette/schema",
             "version": "v1.3.2",
             "source": {
@@ -417,6 +477,59 @@
                 "source": "https://github.com/nette/utils/tree/v4.0.5"
             },
             "time": "2024-08-07T15:39:19+00:00"
+        },
+        {
+            "name": "pierresh/simca",
+            "version": "0.0.4",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/pierresh/simca.git",
+                "reference": "7382bd63111dee45336dd4c7c81a0beaa7683ba3"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/pierresh/simca/zipball/7382bd63111dee45336dd4c7c81a0beaa7683ba3",
+                "reference": "7382bd63111dee45336dd4c7c81a0beaa7683ba3",
+                "shasum": ""
+            },
+            "require": {
+                "meyfa/php-svg": "^0.15.0",
+                "php": ">=8.1"
+            },
+            "require-dev": {
+                "pestphp/pest": "^2.34",
+                "pestphp/pest-plugin-watch": "^2.1",
+                "phpmd/phpmd": "^2.15",
+                "phpstan/phpstan": "^1.11",
+                "rector/rector": "^1.1",
+                "symfony/error-handler": "^7.1"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Pierresh\\Simca\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Pierre Clavequin"
+                }
+            ],
+            "description": "SVG charts for PHP",
+            "keywords": [
+                "chart",
+                "charts",
+                "svg"
+            ],
+            "support": {
+                "issues": "https://github.com/pierresh/simca/issues",
+                "source": "https://github.com/pierresh/simca/tree/0.0.4"
+            },
+            "time": "2024-07-22T14:29:14+00:00"
         },
         {
             "name": "psr/event-dispatcher",
