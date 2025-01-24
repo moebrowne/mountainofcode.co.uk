@@ -79,6 +79,11 @@ img {
 	object-fit: contain;
 }
 
+svg {
+	object-fit: contain;
+	object-position: 50% 50%;
+}
+
 ul {
 	list-style-type: circle;
 }
@@ -208,7 +213,14 @@ body > article {
 	padding: 40px 70px 30px;
 }
 
-body > article:has(:last-child > img, pre:last-child, .full-bleed:last-child, :last-child > x-3d-model) {
+body > article:has(
+		x-body > :last-child > img,
+		x-body > pre:last-child,
+		x-body > .full-bleed:last-child,
+		x-body > :last-child > x-3d-model,
+		x-body > svg:last-child
+	)
+{
 	padding-bottom: 0;
 }
 
@@ -264,8 +276,12 @@ body > article x-body table {
 }
 
 body > article x-body img {
-	background: #fafafa;
 	max-height: 350px;
+}
+
+body > article x-body img,
+body > article x-body svg {
+	background: #fafafa;
 	padding: 20px;
 }
 
@@ -273,7 +289,8 @@ body > article x-body img {
 body > article x-body pre,
 body > article x-body img,
 body > article x-body x-3d-model,
-body > article x-body table {
+body > article x-body table,
+body > article x-body svg {
 	width: calc(100% + 140px);
 	margin-right: -70px;
 	margin-left: -70px;
@@ -290,7 +307,8 @@ body > article x-body table {
 	.full-bleed,
 	body > article x-body table,
 	body > article x-body img,
-	body > article x-body x-3d-model {
+	body > article x-body x-3d-model,
+	body > article x-body svg {
 		margin-right: -10px;
 		margin-left: -10px;
 		width: calc(100% + 20px);
