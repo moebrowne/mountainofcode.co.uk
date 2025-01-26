@@ -58,6 +58,7 @@ var hexGrid = {
 
     // Set everything up
     init: function(canvasObject) {
+        this.randomNumberGenerator = mulberry32((new Date()).getDate());
 
         // Add the canvas object to the hexGrid object
         this.canvas = canvasObject;
@@ -93,11 +94,11 @@ var hexGrid = {
     },
 
 	randomOkColour: function () {
-        return this.options.sector.colours.ok[getRandomIntInclusive(0, (this.options.sector.colours.ok.length - 1))];
+        return this.options.sector.colours.ok[this.getRandomIntInclusive(0, (this.options.sector.colours.ok.length - 1))];
     },
 
 	randomCorruptColour: function () {
-        return this.options.sector.colours.corrupt[getRandomIntInclusive(0, (this.options.sector.colours.corrupt.length - 1))];
+        return this.options.sector.colours.corrupt[this.getRandomIntInclusive(0, (this.options.sector.colours.corrupt.length - 1))];
     },
 
 	randomCharacter: function (charset) {
@@ -107,7 +108,7 @@ var hexGrid = {
             charset = 'good';
         }
 
-        return this.options.chars[charset].charAt(getRandomIntInclusive(0, (this.options.chars[charset].length - 1)));
+        return this.options.chars[charset].charAt(this.getRandomIntInclusive(0, (this.options.chars[charset].length - 1)));
     },
 
     drawSectors: function() {
@@ -136,7 +137,7 @@ var hexGrid = {
     },
 
     drawSector: function(coordX, coordY) {
-        var corrupt = (this.options.corruption.enabled === true && getRandomIntInclusive(0, 100) <= this.options.corruption.percentage);
+        var corrupt = (this.options.corruption.enabled === true && this.getRandomIntInclusive(0, 100) <= this.options.corruption.percentage);
 
         var corruptSector = (typeof corrupt === 'boolean' && corrupt === true);
 
@@ -162,10 +163,19 @@ var hexGrid = {
             x: this.options.sector.width * (Math.floor(Math.random() * (this.canvas.width / this.options.sector.width)) - 1),
             y: this.options.sector.height * (Math.floor(Math.random() * (this.canvas.height / this.options.sector.height)) - 1)
         };
+    },
+
+    getRandomIntInclusive: function(min, max) {
+        return Math.floor(this.randomNumberGenerator() * (max - min + 1)) + min;
     }
 
 };
 
-function getRandomIntInclusive(min, max) {
-    return Math.floor(Math.random() * (max - min + 1)) + min;
+function mulberry32(a) {
+    return function() {
+        let t = a += 0x6D2B79F5;
+        t = Math.imul(t ^ t >>> 15, t | 1);
+        t ^= t + Math.imul(t ^ t >>> 7, t | 61);
+        return ((t ^ t >>> 14) >>> 0) / 4294967296;
+    }
 }
