@@ -283,7 +283,7 @@ body > article x-body img {
 body > article x-body img,
 body > article x-body svg {
 	background: #fafafa;
-	padding: 20px;
+	padding: 20px 0;
 }
 
 .full-bleed,
