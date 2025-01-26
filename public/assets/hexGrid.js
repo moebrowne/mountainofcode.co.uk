@@ -179,3 +179,13 @@ function mulberry32(a) {
         return ((t ^ t >>> 14) >>> 0) / 4294967296;
     }
 }
+
+window.addEventListener('resize', () => {
+    clearTimeout(window.timeout);
+    window.timeout = setTimeout(
+        () => {
+            window.hexGrid.init(window.hexGrid.canvas);
+        },
+        100,
+    );
+});
