@@ -24,6 +24,7 @@ use Tempest\Highlight\Highlighter;
 final class Post implements Stringable
 {
     private(set) RenderedContentInterface $post;
+    private array $frameInjections = [];
 
     public function __construct(
         private(set) string $filePath,
@@ -38,6 +39,18 @@ final class Post implements Stringable
                 eval($matches['code']);
 
                 return ob_get_clean();
+            },
+            $markdownSource,
+        );
+
+        $markdownSource = preg_replace_callback(
+            "#```html\n<!--\[eval(?<attrs>[^\]]+)\]-->(?<code>.+?)```#s",
+            function (array $matches): string {
+                $key = 'FRAME' . base64_encode(random_bytes(8));
+
+                $this->frameInjections[$key] = '<iframe ' . $matches['attrs'] . ' srcdoc="' . htmlentities($matches['code']) . '"></iframe>';
+
+                return $key;
             },
             $markdownSource,
         );
@@ -94,6 +107,10 @@ final class Post implements Stringable
     public function getBody(): string
     {
         $content = $this->post->getContent();
+
+        foreach ($this->frameInjections as $key => $iframeHtml) {
+            $content = str_replace('<p>' . $key . '</p>', $iframeHtml, $content);
+        }
 
         return preg_replace('/<h1>[^<]+<\/h1>/', '', $content);
     }
