@@ -11,6 +11,7 @@
     <meta property="og:url" itemprop="url" content="https://www.mountainofcode.co.uk/">
     <meta name="description" property="og:description" itemprop="description" content="Mountain of code is a collection of web and dev ops related projects mixed with a little hacking and tinkering.">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="/assets/icon.svg" type="image/svg+xml">
 </head>
 <body>
 <canvas id="hexGridEl" style="position: fixed; z-index:-1; inset: 0; "></canvas>
