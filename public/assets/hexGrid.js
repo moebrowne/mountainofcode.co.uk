@@ -154,6 +154,7 @@ var hexGrid = {
         var textCoordY = (coordY + (this.options.sector.height / 2) + 4);
 
         // Draw the text
+        this.context.font = '12px monospace';
         this.context.fillStyle = colourText;
         this.context.fillText(this.randomCharacter(textCharset), textCoordX, textCoordY);
     },
