@@ -1,4 +1,4 @@
-# Pi Zero Micro Pirate Box
+# Pi Zero Micro Pirate Box 🏴‍☠️
 
 #raspberry pi
 #wifi

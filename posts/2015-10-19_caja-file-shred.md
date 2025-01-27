@@ -1,4 +1,4 @@
-# Securely Deleting Files In Caja
+# 🗑️ Securely Deleting Files In Caja
 
 #caja
 #linux

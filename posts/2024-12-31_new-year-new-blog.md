@@ -1,4 +1,4 @@
-# New Year New Blog
+# New Year New Blog 🎆
 
 #meta
 #redesign

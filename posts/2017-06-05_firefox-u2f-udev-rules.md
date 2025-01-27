@@ -1,4 +1,4 @@
-# 2FA In Firefox with Yubikey
+# 🔒 2FA In Firefox with Yubikey
 
 #2fa
 #firefox

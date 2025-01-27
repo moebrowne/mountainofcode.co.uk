@@ -1,4 +1,4 @@
-# A Super Capacitor Powered Raspberry Pi
+# ⚡ A Super Capacitor Powered Raspberry Pi
 
 #raspberry pi
 #supercaps

@@ -1,4 +1,4 @@
-# Don't Show The Full Text On An Index Page!
+# 😖 Don't Show The Full Text On An Index Page!
 
 #rant
 
