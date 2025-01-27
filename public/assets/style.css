@@ -51,6 +51,7 @@ h1.primary {
 }
 
 h1.primary > a {
+	color: inherit;
 	text-decoration: none;
 }
 
@@ -69,7 +70,11 @@ h1.primary > a {
 }
 
 a {
-	text-decoration: none;
+	color: #3a5be6;
+}
+
+a:visited {
+	color: revert;
 }
 
 img {
@@ -115,6 +120,10 @@ x-post-list {
 	padding: 20px;
 	max-width: 800px;
 	margin: 0 auto;
+}
+
+x-post-list a {
+	text-decoration: none;
 }
 
 x-post-list > article {
