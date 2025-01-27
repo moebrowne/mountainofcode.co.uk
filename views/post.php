@@ -40,7 +40,7 @@ $pageTitle = $post->getTitle();
     </h1>
 
     <time datetime="<?= $post->getPublishedAt()->format('c'); ?>" itemprop="dateCreated">
-        <?= strtoupper($post->getPublishedAt()->format('jS M Y')); ?>
+        <?= strtoupper($post->getPublishedAt()->format('j F Y')); ?>
     </time>
 
     <x-tag-list>
