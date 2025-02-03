@@ -289,10 +289,6 @@ body > article x-body table {
 	margin: 0 -70px 0;
 }
 
-body > article x-body img {
-	max-height: 350px;
-}
-
 body > article x-body img,
 body > article x-body svg {
 	background: #fafafa;

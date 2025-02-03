@@ -57,6 +57,9 @@ final class SmartImageRenderer implements NodeRendererInterface, XmlNodeRenderer
         if ($imageSize !== false) {
             $attrs['width'] = (string)$imageSize[0];
             $attrs['height'] = (string)$imageSize[1];
+
+            $aspectRatio = $imageSize[0]/$imageSize[1];
+            $attrs['style'] = 'max-height: ' . round($aspectRatio * 350) . 'px';
         }
 
         $attrs['loading'] = 'lazy';
