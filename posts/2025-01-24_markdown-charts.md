@@ -1,4 +1,4 @@
-# 📊 Charts In Markdown
+# Charts In Markdown 📊
 
 #Markdown
 #Chart
