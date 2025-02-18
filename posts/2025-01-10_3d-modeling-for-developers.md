@@ -33,3 +33,7 @@ modules, etc.
 
 It also fit really nicely with workflows I was already using like Git! I've since designed a bunch of useful parts, I
 created a [repo](https://github.com/moebrowne/3D-models) which has most of them in.
+
+**UPDATE 18 Feb**: I recently discovered [Replicad](https://studio.replicad.xyz/workbench) which is similar to OpenSCAD but
+it uses Javascript and runs in the browser. I haven't used it yet but I'd like to give it a go, the demo shows that it
+is capable of making natural curves which isn't something OpenSCAD is good at.
