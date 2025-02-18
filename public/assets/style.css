@@ -277,6 +277,12 @@ body > article x-body a {
 	color: #258fb8;
 }
 
+body > article x-body hr {
+	margin: 2rem -50px;
+	border: none;
+	border-top: 1px solid #cdcdcd;
+}
+
 body > article x-body pre {
 	overflow-x: auto;
 	padding: 12px 12px 12px 70px;
