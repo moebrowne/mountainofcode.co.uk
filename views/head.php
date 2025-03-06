@@ -5,7 +5,7 @@
     <title><?= isset($pageTitle) ? $pageTitle . ' - Mountain Of Code':'Mountain Of Code'; ?></title>
     <link href="/assets/style.css" rel="stylesheet" type="text/css">
     <link href="/assets/code-style.css" rel="stylesheet" type="text/css">
-    <link rel="alternate" title="Blog Posts" type="application/atom+xml2 href="/feed.atom">
+    <link rel="alternate" title="Blog Posts" type="application/atom+xml2" href="/feed.atom">
 
     <meta property="og:site_name" itemprop="name" content="Mountain Of Code">
     <meta property="og:url" itemprop="url" content="https://www.mountainofcode.co.uk/">
