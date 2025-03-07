@@ -37,3 +37,6 @@ created a [repo](https://github.com/moebrowne/3D-models) which has most of them 
 **UPDATE 18 Feb**: I recently discovered [Replicad](https://studio.replicad.xyz/workbench) which is similar to OpenSCAD but
 it uses Javascript and runs in the browser. I haven't used it yet but I'd like to give it a go, the demo shows that it
 is capable of making natural curves which isn't something OpenSCAD is good at.
+
+**UPDATE 7 Mar**: There is now an [online version of OpenSCAD](https://ochafik.com/openscad2/). It uses WebAssembly, which
+is very cool, if you want to see the source it's available on GitHub: [openscad/openscad-playground](https://github.com/openscad/openscad-playground) 
