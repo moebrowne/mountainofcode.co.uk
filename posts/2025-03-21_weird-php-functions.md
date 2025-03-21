@@ -187,11 +187,11 @@ This one actually seems useful! It parses an HTML file and extracts the `{html}<
 var_export(get_meta_tags('https://mountainofcode.co.uk'));
 ```
 
-```
 ```php
-//[eval]
-var_export(get_meta_tags('https://mountainofcode.co.uk'));
-```​
+array (
+  'description' => 'Mountain of code is a collection of web and dev ops related projects mixed with a little hacking and tinkering.',
+  'viewport' => 'width=device-width, initial-scale=1',
+)
 ```
 
 [https://www.php.net/manual/en/function.get-meta-tags.php](https://www.php.net/manual/en/function.get-meta-tags.php)
