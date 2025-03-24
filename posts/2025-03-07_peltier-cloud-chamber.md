@@ -2,6 +2,7 @@
 
 #science
 #nuclear
+#project
 
 Many years ago me and my dad set out to try and build a cloud chamber, there were a number of guides, videos and Instructables
 online. We opted for the <abbr title="Thermo Electric Cooler">TEC</abbr> approach because we didn't have access to
