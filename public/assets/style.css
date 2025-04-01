@@ -301,6 +301,66 @@ body > article x-body svg {
 	padding: 20px 0;
 }
 
+body > article x-body > blockquote {
+	position: relative;
+	width: calc(100% + 140px);
+	margin: 2rem -70px;
+	padding: 2rem 70px;
+	background-color: #f7f9fb;
+	line-height: 180%;
+	text-align: justify;
+	text-wrap: pretty;
+}
+
+body > article x-body > blockquote::before {
+	content: "\201C";
+	font-family: 'Share Tech Mono', monospace;
+	position: absolute;
+	top: 10px;
+	left: 20px;
+	color: #258fb8;
+	font-size: 4rem;
+	opacity: 0.2;
+	line-height: 1;
+}
+
+body > article x-body > blockquote::after {
+	content: "\201D";
+	font-family: 'Share Tech Mono', monospace;
+	position: absolute;
+	bottom: -25px;
+	right: 20px;
+	color: #258fb8;
+	font-size: 4rem;
+	opacity: 0.2;
+	line-height: 1;
+}
+
+body > article x-body > blockquote p {
+	margin: 0;
+	position: relative;
+}
+
+@media screen and (max-device-width: 560px) {
+	body > article x-body > blockquote {
+		width: calc(100% + 40px);
+		margin: 2rem -20px;
+		padding: 1.8rem 20px;
+	}
+
+	body > article x-body > blockquote::before {
+		left: 10px;
+		top: 5px;
+		font-size: 3rem;
+	}
+
+	body > article x-body > blockquote::after {
+		right: 10px;
+		bottom: -20px;
+		font-size: 3rem;
+	}
+}
+
 .full-bleed,
 body > article x-body pre,
 body > article x-body img,
