@@ -298,7 +298,7 @@ body > article x-body table {
 body > article x-body img,
 body > article x-body svg {
 	background: #fafafa;
-	padding: 20px 0;
+	margin: 20px 0;
 }
 
 body > article x-body > blockquote {
