@@ -77,6 +77,14 @@ a:visited {
 	color: revert;
 }
 
+a[href^="https://"]:not(:has(*))::after {
+	content: "🡵";
+	display: inline-block;
+	vertical-align: super;
+	font-size: 75%;
+	line-height: 1em;
+}
+
 img {
 	display: block;
 	width: 100%;
