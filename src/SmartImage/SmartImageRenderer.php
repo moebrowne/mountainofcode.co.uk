@@ -46,23 +46,25 @@ final class SmartImageRenderer implements NodeRendererInterface, XmlNodeRenderer
             $attrs['title'] = $title;
         }
 
-        $imagePath = __DIR__ . '/../../public/' . $node->getUrl();
+        if (str_starts_with($node->getUrl(), 'https://') === false) {
+            $imagePath = __DIR__ . '/../../public/' . $node->getUrl();
 
-        if (file_exists($imagePath) === false) {
-            return '';
+            if (file_exists($imagePath) === false) {
+                return '';
+            }
+
+            $imageSize = getimagesize($imagePath);
+
+            if ($imageSize !== false) {
+                $attrs['width'] = (string)$imageSize[0];
+                $attrs['height'] = (string)$imageSize[1];
+
+                $aspectRatio = $imageSize[0]/$imageSize[1];
+                $attrs['style'] = 'max-height: ' . min(round($aspectRatio * 350), $attrs['height'])  . 'px';
+            }
+
+            $attrs['loading'] = 'lazy';
         }
-
-        $imageSize = getimagesize($imagePath);
-
-        if ($imageSize !== false) {
-            $attrs['width'] = (string)$imageSize[0];
-            $attrs['height'] = (string)$imageSize[1];
-
-            $aspectRatio = $imageSize[0]/$imageSize[1];
-            $attrs['style'] = 'max-height: ' . min(round($aspectRatio * 350), $attrs['height'])  . 'px';
-        }
-
-        $attrs['loading'] = 'lazy';
 
         return new HtmlElement('img', $attrs, '', true);
     }
