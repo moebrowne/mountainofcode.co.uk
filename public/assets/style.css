@@ -436,3 +436,21 @@ x-tag::after {
 	padding-left: 1px;
 	margin-top: 1px;
 }
+
+magic-sparkle {
+	display: inline;
+	color: transparent;
+	background: linear-gradient(90deg, #ff00cc, #3300ff, #00ccff, #ff00cc);
+	background-clip: text;
+	animation: shift 2s linear infinite;
+}
+
+@keyframes shift {
+	to {filter: hue-rotate(360deg);}
+}
+
+@media (prefers-reduced-motion: reduce) {
+	magic-sparkle {animation: none;}
+}
+
+

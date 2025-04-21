@@ -68,7 +68,8 @@ var_export(count_chars('I am a teeeeeapot', 1));
 ```​
 ```
 
-The second argument is a magic number which changes the returned values. Dial 3 if you want all the unique characters:
+The second argument is a <magic-sparkle>magic number</magic-sparkle> which changes the returned values. Dial 3 if you
+want all the unique characters:
 
 ```php
 var_export(count_chars('I am a teeeeeapot', 3));

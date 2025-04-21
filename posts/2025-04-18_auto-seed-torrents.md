@@ -14,10 +14,10 @@ but useful, practical data.
 
 ![Transmission Web UI](/images/transmission-ui.png)
 
-I love the decentralised concept of torrents, honestly they feel like magic. I first became aware of torrents when
-PirateBay was big, but I have continued using them to this day to download ISOs for various Linux distros. This felt good,
-I could get the data I wanted and I could help others get it too, all without relying on infrastructure which could be
-down or disappear for good.
+I love the decentralised concept of torrents, honestly they feel like <magic-sparkle>magic</magic-sparkle> . I first
+became aware of torrents when PirateBay was big, but I have continued using them to this day to download ISOs for
+various Linux distros. This felt good, I could get the data I wanted and I could help others get it too, all without
+relying on infrastructure which could be down or disappear for good.
 
 I would always leave the torrents I downloaded seeding to others but I wanted to go further, I wanted to share more than
 just the data I happened to need. I wanted to be able to automatically seed all the versions of a thing as soon as they
