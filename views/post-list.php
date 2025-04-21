@@ -4,11 +4,10 @@ use MoeBrowne\Post;
 
 require __DIR__ . '/../vendor/autoload.php';
 
-$postPaths = array_reverse(glob(__DIR__ . '/../posts/*'));
-
-$posts = array_map(
-    fn (string $postPath): Post => new Post($postPath),
-    $postPaths,
+$posts = pipe(
+    glob(__DIR__ . '/../posts/*'),
+    mapToDto: fn (string $postPath): Post => new Post($postPath),
+    sortByDateThenTitle: fn (Post $a, Post $b): int => $b->getPublishedAt() <=> $a->getPublishedAt() ?: $a->getTitle() <=> $b->getTitle()
 );
 
 ?>
