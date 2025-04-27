@@ -1,4 +1,4 @@
-# [DRAFT] AI Image Generation Is Fun
+# AI Image Generation Is Fun
 
 #AI
 
