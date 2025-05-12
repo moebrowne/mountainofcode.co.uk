@@ -264,21 +264,14 @@ body > article h1 {
 	font-weight: 400;
 	text-align: center;
 	margin: 0 0 40px;
-	font-size: 2rem;
+	font-size: 2.5rem;
 	text-wrap: balance;
 }
 
 body > article h2 {
-	margin-top: 4rem;
-	margin-bottom: 2rem;
-}
-
-body > article h2::before {
-	position: absolute;
-	content: '>>>';
-	color: #F2F2F2;
-	padding-right: 0.6rem;
-	transform: translateX(-100%);
+	margin-top: 5rem;
+	margin-bottom: 1.6rem;
+	font-size: 2rem;
 }
 
 body > article time {
