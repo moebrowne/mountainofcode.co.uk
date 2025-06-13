@@ -42,7 +42,7 @@ curl 'https://nitter.poast.org/xkcd/rss' \
     -H 'Cookie: res={HEXADECIMAL_VALUE}'
 ```
 
-The <magic-sparkle>magic</magic-sparkle> value stored in the `res` cookie was the key One internet search for
+The <magic-sparkle>magic</magic-sparkle> value stored in the `res` cookie was the key. One internet search for
 `"Verifying your browser" "res="` revealed [simon987/ngx_http_js_challenge_module](https://github.com/simon987/ngx_http_js_challenge_module).
 This is a "Simple javascript proof-of-work based access for Nginx".
 
