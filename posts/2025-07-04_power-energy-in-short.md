@@ -3,13 +3,14 @@
 #in short
 #energy
 
-This is part of a series of posts which gives a surface level explanation of a topic.
+This is part of a series of posts which gives a [surface level explanation](https://www.seangoedecke.com/shallow-technical-knowledge/)
+of a topic.
 
-https://www.seangoedecke.com/shallow-technical-knowledge/
+Power and energy are commonly used interchangeably, but they are very different.
 
-Power and energy are commonly used interchangeably but they are very different.
-
-Energy is a measure of how much effort is required to make something happen, it's the 'fuel'. For example it takes a specific amount of energy to lift a weight a set distance, it doesn't matter how quickly, or how you do it, it will require the same amount of energy.
+Energy is a measure of how much effort is required to make something happen; it's the 'fuel'. For example, it takes a
+specific amount of energy to lift a weight a set distance, it doesn't matter how quickly, or how you do it, it will
+require the same amount of energy.
 
 Power is a measure of how quickly energy is consumed. It's a rate.
 
