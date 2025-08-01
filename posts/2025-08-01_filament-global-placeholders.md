@@ -2,9 +2,9 @@
 
 #Filament PHP
 
-Recently I was adding placeholder properties to a number of form fields across a Filament PHP site and thought that
-there must be a better way than copy-pasting everywhere. It occurred to me that the field's name was a great indicator
-of what its placeholder should be.
+Recently I was adding placeholder properties to a number of form fields across a site built using [Filament PHP](https://filamentphp.com/)
+and thought that there must be a better way than copy-pasting everywhere. It occurred to me that the field's name was a
+great indicator of what its placeholder should be.
 
 Thanks to the `{php}configureUsing()` method added in v3 this was pretty easy:
 
