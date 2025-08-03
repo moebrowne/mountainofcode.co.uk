@@ -1,3 +1,4 @@
+<?php require __DIR__ . "/../views/head.php"; ob_flush(); flush(); ?>
 <?php
 
 use MoeBrowne\Post;
@@ -11,7 +12,6 @@ $posts = pipe(
 );
 
 ?>
-<?php require __DIR__ . "/../views/head.php"; ?>
 
     <x-post-list>
         <?php $year = null; ?>
