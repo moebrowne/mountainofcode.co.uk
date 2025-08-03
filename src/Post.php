@@ -23,14 +23,22 @@ use Tempest\Highlight\Highlighter;
 
 final class Post implements Stringable
 {
-    private(set) RenderedContentInterface $post;
+    private(set) RenderedContentInterface $postCache;
     private array $frameInjections = [];
 
     public function __construct(
         private(set) string $filePath,
     )
     {
-        $markdownSource = file_get_contents($filePath);
+    }
+
+    public function parseMarkdown()
+    {
+        if (isset($this->postCache)) {
+            return $this->postCache;
+        }
+
+        $markdownSource = file_get_contents($this->filePath);
 
         $markdownSource = preg_replace_callback(
             "#```php\n//\[eval\](?<code>.+?)```#s",
@@ -67,7 +75,7 @@ final class Post implements Stringable
             ->addExtension(new StlModelViewerExtension())
         ;
 
-        $this->post = new MarkdownConverter($environment)
+        return $this->postCache = new MarkdownConverter($environment)
             ->convert($markdownSource);
     }
 
@@ -83,7 +91,7 @@ final class Post implements Stringable
     {
         $nodes = new Query()
             ->where(Query::type(Tag::class))
-            ->findAll($this->post->getDocument());
+            ->findAll($this->parseMarkdown()->getDocument());
 
         $tags = array_map(
             fn(Tag $tag): string => $tag->getLiteral(),
@@ -99,14 +107,14 @@ final class Post implements Stringable
     {
         return new Query()
             ->where(Query::type(Heading::class))
-            ->findOne($this->post->getDocument())
+            ->findOne($this->parseMarkdown()->getDocument())
             ?->firstChild()
             ->getLiteral() ?? throw new \Exception('No title found');
     }
 
     public function getBody(): string
     {
-        $content = $this->post->getContent();
+        $content = $this->parseMarkdown()->getContent();
 
         foreach ($this->frameInjections as $key => $iframeHtml) {
             $content = str_replace('<p>' . $key . '</p>', $iframeHtml, $content);
