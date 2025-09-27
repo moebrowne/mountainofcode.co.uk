@@ -12,6 +12,7 @@ use League\CommonMark\Extension\Table\TableExtension;
 use League\CommonMark\MarkdownConverter;
 use League\CommonMark\Node\Query;
 use League\CommonMark\Output\RenderedContentInterface;
+use MoeBrowne\BashLanguage\BashLanguage;
 use MoeBrowne\MarkdownTag\MarkdownTagExtension;
 use MoeBrowne\MarkdownTag\Tag;
 use MoeBrowne\OpenscadLanguage\OpenscadLanguage;
@@ -64,7 +65,9 @@ final class Post implements Stringable
         );
 
         $highlighter = new Highlighter()
-            ->addLanguage(new OpenscadLanguage());
+            ->addLanguage(new OpenscadLanguage())
+            ->addLanguage(new BashLanguage())
+        ;
 
         $environment = new Environment()
             ->addExtension(new CommonMarkCoreExtension())
