@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "d3fe1989e84d0681fc59e1dc35f06052",
+    "content-hash": "d15e06d93427c6739ed52906b9910691",
     "packages": [
         {
             "name": "dflydev/dot-access-data",
@@ -83,16 +83,16 @@
         },
         {
             "name": "league/commonmark",
-            "version": "2.7.0",
+            "version": "2.7.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/thephpleague/commonmark.git",
-                "reference": "6fbb36d44824ed4091adbcf4c7d4a3923cdb3405"
+                "reference": "10732241927d3971d28e7ea7b5712721fa2296ca"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/thephpleague/commonmark/zipball/6fbb36d44824ed4091adbcf4c7d4a3923cdb3405",
-                "reference": "6fbb36d44824ed4091adbcf4c7d4a3923cdb3405",
+                "url": "https://api.github.com/repos/thephpleague/commonmark/zipball/10732241927d3971d28e7ea7b5712721fa2296ca",
+                "reference": "10732241927d3971d28e7ea7b5712721fa2296ca",
                 "shasum": ""
             },
             "require": {
@@ -121,7 +121,7 @@
                 "symfony/process": "^5.4 | ^6.0 | ^7.0",
                 "symfony/yaml": "^2.3 | ^3.0 | ^4.0 | ^5.0 | ^6.0 | ^7.0",
                 "unleashedtech/php-coding-standard": "^3.1.1",
-                "vimeo/psalm": "^4.24.0 || ^5.0.0"
+                "vimeo/psalm": "^4.24.0 || ^5.0.0 || ^6.0.0"
             },
             "suggest": {
                 "symfony/yaml": "v2.3+ required if using the Front Matter extension"
@@ -186,7 +186,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2025-05-05T12:20:28+00:00"
+            "time": "2025-07-20T12:47:49+00:00"
         },
         {
             "name": "league/config",
@@ -272,16 +272,16 @@
         },
         {
             "name": "meyfa/php-svg",
-            "version": "v0.15.1",
+            "version": "v0.16.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/meyfa/php-svg.git",
-                "reference": "dc2ef9c62807b8b339899b97f6597b770f40d492"
+                "reference": "a62c2b9842826e83ea51f9b9e6ed28d2bdb1033c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/meyfa/php-svg/zipball/dc2ef9c62807b8b339899b97f6597b770f40d492",
-                "reference": "dc2ef9c62807b8b339899b97f6597b770f40d492",
+                "url": "https://api.github.com/repos/meyfa/php-svg/zipball/a62c2b9842826e83ea51f9b9e6ed28d2bdb1033c",
+                "reference": "a62c2b9842826e83ea51f9b9e6ed28d2bdb1033c",
                 "shasum": ""
             },
             "require": {
@@ -320,15 +320,9 @@
             ],
             "support": {
                 "issues": "https://github.com/meyfa/php-svg/issues",
-                "source": "https://github.com/meyfa/php-svg/tree/v0.15.1"
+                "source": "https://github.com/meyfa/php-svg/tree/v0.16.1"
             },
-            "funding": [
-                {
-                    "url": "https://github.com/meyfa",
-                    "type": "github"
-                }
-            ],
-            "time": "2024-06-28T12:57:28+00:00"
+            "time": "2025-03-10T22:28:37+00:00"
         },
         {
             "name": "nette/schema",
@@ -394,29 +388,29 @@
         },
         {
             "name": "nette/utils",
-            "version": "v4.0.6",
+            "version": "v4.0.8",
             "source": {
                 "type": "git",
                 "url": "https://github.com/nette/utils.git",
-                "reference": "ce708655043c7050eb050df361c5e313cf708309"
+                "reference": "c930ca4e3cf4f17dcfb03037703679d2396d2ede"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nette/utils/zipball/ce708655043c7050eb050df361c5e313cf708309",
-                "reference": "ce708655043c7050eb050df361c5e313cf708309",
+                "url": "https://api.github.com/repos/nette/utils/zipball/c930ca4e3cf4f17dcfb03037703679d2396d2ede",
+                "reference": "c930ca4e3cf4f17dcfb03037703679d2396d2ede",
                 "shasum": ""
             },
             "require": {
-                "php": "8.0 - 8.4"
+                "php": "8.0 - 8.5"
             },
             "conflict": {
                 "nette/finder": "<3",
                 "nette/schema": "<1.2.2"
             },
             "require-dev": {
-                "jetbrains/phpstorm-attributes": "dev-master",
+                "jetbrains/phpstorm-attributes": "^1.2",
                 "nette/tester": "^2.5",
-                "phpstan/phpstan": "^1.0",
+                "phpstan/phpstan-nette": "^2.0@stable",
                 "tracy/tracy": "^2.9"
             },
             "suggest": {
@@ -434,6 +428,9 @@
                 }
             },
             "autoload": {
+                "psr-4": {
+                    "Nette\\": "src"
+                },
                 "classmap": [
                     "src/"
                 ]
@@ -474,35 +471,35 @@
             ],
             "support": {
                 "issues": "https://github.com/nette/utils/issues",
-                "source": "https://github.com/nette/utils/tree/v4.0.6"
+                "source": "https://github.com/nette/utils/tree/v4.0.8"
             },
-            "time": "2025-03-30T21:06:30+00:00"
+            "time": "2025-08-06T21:43:34+00:00"
         },
         {
             "name": "pierresh/simca",
-            "version": "dev-temp",
+            "version": "0.0.8",
             "source": {
                 "type": "git",
-                "url": "https://github.com/moebrowne/simca.git",
-                "reference": "bf5e674201783a1ece74f1d1680e939c7e30d5a9"
+                "url": "https://github.com/pierresh/simca.git",
+                "reference": "fc89ed842659c8660f92cb1b1c7008b0df245672"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/moebrowne/simca/zipball/bf5e674201783a1ece74f1d1680e939c7e30d5a9",
-                "reference": "bf5e674201783a1ece74f1d1680e939c7e30d5a9",
+                "url": "https://api.github.com/repos/pierresh/simca/zipball/fc89ed842659c8660f92cb1b1c7008b0df245672",
+                "reference": "fc89ed842659c8660f92cb1b1c7008b0df245672",
                 "shasum": ""
             },
             "require": {
-                "meyfa/php-svg": "^0.15.0",
-                "php": ">=8.1"
+                "meyfa/php-svg": "^0.16.0",
+                "php": ">=8.2"
             },
             "require-dev": {
-                "pestphp/pest": "^2.34",
-                "pestphp/pest-plugin-watch": "^2.1",
+                "pestphp/pest": "^3.7",
+                "pestphp/pest-plugin-watch": "^3.0",
                 "phpmd/phpmd": "^2.15",
-                "phpstan/phpstan": "^1.11",
-                "rector/rector": "^1.1",
-                "symfony/error-handler": "^7.1"
+                "phpstan/phpstan": "^2.1",
+                "rector/rector": "^2.0",
+                "symfony/error-handler": "^7.2"
             },
             "type": "library",
             "autoload": {
@@ -510,25 +507,7 @@
                     "Pierresh\\Simca\\": "src/"
                 }
             },
-            "scripts": {
-                "refactor": [
-                    "rector"
-                ],
-                "test": [
-                    "./vendor/bin/pest --watch"
-                ],
-                "test-one-run": [
-                    "./vendor/bin/pest"
-                ],
-                "stan": [
-                    "./vendor/bin/phpstan analyse --ansi "
-                ],
-                "quality": [
-                    "@refactor --dry-run",
-                    "@stan",
-                    "@test-one-run"
-                ]
-            },
+            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -544,9 +523,10 @@
                 "svg"
             ],
             "support": {
-                "source": "https://github.com/moebrowne/simca/tree/temp"
+                "issues": "https://github.com/pierresh/simca/issues",
+                "source": "https://github.com/pierresh/simca/tree/0.0.8"
             },
-            "time": "2025-01-21T22:54:53+00:00"
+            "time": "2025-08-31T12:57:06+00:00"
         },
         {
             "name": "psr/event-dispatcher",
@@ -600,16 +580,16 @@
         },
         {
             "name": "symfony/deprecation-contracts",
-            "version": "v3.5.1",
+            "version": "v3.6.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/deprecation-contracts.git",
-                "reference": "74c71c939a79f7d5bf3c1ce9f5ea37ba0114c6f6"
+                "reference": "63afe740e99a13ba87ec199bb07bbdee937a5b62"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/deprecation-contracts/zipball/74c71c939a79f7d5bf3c1ce9f5ea37ba0114c6f6",
-                "reference": "74c71c939a79f7d5bf3c1ce9f5ea37ba0114c6f6",
+                "url": "https://api.github.com/repos/symfony/deprecation-contracts/zipball/63afe740e99a13ba87ec199bb07bbdee937a5b62",
+                "reference": "63afe740e99a13ba87ec199bb07bbdee937a5b62",
                 "shasum": ""
             },
             "require": {
@@ -622,7 +602,7 @@
                     "name": "symfony/contracts"
                 },
                 "branch-alias": {
-                    "dev-main": "3.5-dev"
+                    "dev-main": "3.6-dev"
                 }
             },
             "autoload": {
@@ -647,7 +627,7 @@
             "description": "A generic function and convention to trigger deprecation notices",
             "homepage": "https://symfony.com",
             "support": {
-                "source": "https://github.com/symfony/deprecation-contracts/tree/v3.5.1"
+                "source": "https://github.com/symfony/deprecation-contracts/tree/v3.6.0"
             },
             "funding": [
                 {
@@ -663,11 +643,11 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2024-09-25T14:20:29+00:00"
+            "time": "2024-09-25T14:21:43+00:00"
         },
         {
             "name": "symfony/polyfill-php80",
-            "version": "v1.32.0",
+            "version": "v1.33.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/polyfill-php80.git",
@@ -727,7 +707,7 @@
                 "shim"
             ],
             "support": {
-                "source": "https://github.com/symfony/polyfill-php80/tree/v1.32.0"
+                "source": "https://github.com/symfony/polyfill-php80/tree/v1.33.0"
             },
             "funding": [
                 {
@@ -739,6 +719,10 @@
                     "type": "github"
                 },
                 {
+                    "url": "https://github.com/nicolas-grekas",
+                    "type": "github"
+                },
+                {
                     "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
                     "type": "tidelift"
                 }
@@ -747,26 +731,26 @@
         },
         {
             "name": "tempest/highlight",
-            "version": "2.11.4",
+            "version": "2.13.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/tempestphp/highlight.git",
-                "reference": "5a239a92ad6bd3e506ca86a0de3e99ac9dbcb0dd"
+                "reference": "b3efa9bedc6a6524a7e9328327cb0ce477b5b9d6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/tempestphp/highlight/zipball/5a239a92ad6bd3e506ca86a0de3e99ac9dbcb0dd",
-                "reference": "5a239a92ad6bd3e506ca86a0de3e99ac9dbcb0dd",
+                "url": "https://api.github.com/repos/tempestphp/highlight/zipball/b3efa9bedc6a6524a7e9328327cb0ce477b5b9d6",
+                "reference": "b3efa9bedc6a6524a7e9328327cb0ce477b5b9d6",
                 "shasum": ""
             },
             "require": {
-                "php": "^8.3"
+                "php": "^8.4"
             },
             "require-dev": {
                 "assertchris/ellison": "^1.0.2",
-                "friendsofphp/php-cs-fixer": "^3.21",
+                "friendsofphp/php-cs-fixer": "^3.84",
                 "league/commonmark": "^2.4",
-                "phpstan/phpstan": "^1.10.0",
+                "phpstan/phpstan": "^1.12.0",
                 "phpunit/phpunit": "^10.0",
                 "symfony/var-dumper": "^6.4|^7.0"
             },
@@ -793,7 +777,7 @@
             "description": "Fast, extensible, server-side code highlighting",
             "support": {
                 "issues": "https://github.com/tempestphp/highlight/issues",
-                "source": "https://github.com/tempestphp/highlight/tree/2.11.4"
+                "source": "https://github.com/tempestphp/highlight/tree/2.13.1"
             },
             "funding": [
                 {
@@ -801,15 +785,13 @@
                     "type": "github"
                 }
             ],
-            "time": "2025-03-19T05:38:35+00:00"
+            "time": "2025-07-18T12:38:05+00:00"
         }
     ],
     "packages-dev": [],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": {
-        "pierresh/simca": 20
-    },
+    "stability-flags": {},
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {

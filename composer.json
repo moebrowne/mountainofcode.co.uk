@@ -6,18 +6,12 @@
         "league/commonmark": "^2.6",
         "ext-mbstring": "*",
         "tempest/highlight": "^2.11",
-        "pierresh/simca": "dev-temp"
+        "pierresh/simca": "^0.0.8"
     },
     "autoload": {
         "psr-4": {
             "MoeBrowne\\": "src"
         },
         "files": ["functions.php"]
-    },
-    "repositories": [
-        {
-            "type": "vcs",
-            "url": "https://github.com/moebrowne/simca"
-        }
-    ]
+    }
 }
