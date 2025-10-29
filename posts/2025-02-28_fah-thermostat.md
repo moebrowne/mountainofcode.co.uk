@@ -58,19 +58,19 @@ CURRENT_TEMP=$(curl --request POST \
 
 # Way too hot, stop folding
 if [[ $CURRENT_TEMP -ge $MAX_TEMP ]]; then
-    /usr/bin/FAHClient --send-pause 02
+    /usr/bin/fahctl pause
     exit
 fi
 
 # Too hot, finish the current task
 if [[ $CURRENT_TEMP -ge $(( $TARGET_TEMP+$HISTO )) ]]; then
-    /usr/bin/FAHClient --send-finish 02
+    /usr/bin/fahctl finish
     exit
 fi
 
 # Too cold, start Folding
 if [[ $CURRENT_TEMP -lt $(( $TARGET_TEMP-$HISTO )) ]]; then
-    /usr/bin/FAHClient --send-unpause 02
+    /usr/bin/fahctl fold
     exit
 fi
 ```
