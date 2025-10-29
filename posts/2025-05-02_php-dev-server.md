@@ -25,3 +25,9 @@ Thanks to IPv6 shorthand notation, there is an even shorter version, though argu
 ```
 php -S [::1]:8008
 ```
+
+
+## Update (29 Oct 25) - Dynamic Ports
+
+Since PHP 8.0 if you use port 0 then PHP will bind to the next available port. Apparently this is a common non-standard
+but common feature in software.
