@@ -68,12 +68,18 @@ code {
     display: inline-block;
     min-width: 100%;
     background-color: #00FF0022;
+    margin-left: -70px;
+    padding-left: 70px;
+    width: calc(100% + 80px);
 }
 
 .hl-deletion {
     display: inline-block;
     min-width: 100%;
     background-color: #FF000011;
+    margin-left: -70px;
+    padding-left: 70px;
+    width: calc(100% + 80px);
 }
 
 .hl-gutter {
