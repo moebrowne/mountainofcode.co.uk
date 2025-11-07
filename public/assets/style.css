@@ -304,14 +304,35 @@ body > article x-body hr {
 
 body > article x-body pre {
 	overflow-x: auto;
+	padding: 12px;
+}
+
+body > article x-body > pre {
+	overflow-x: auto;
 	padding: 12px 12px 12px 70px;
 }
 
 body > article x-body table {
-	background: #F2F2F2;
-	padding: 10px 10px 10px 70px;
+	background: linear-gradient(to bottom, #f8f9fa, #f8f8fa);
 	text-align: left;
 	margin: 0 -70px 0;
+	border-collapse: collapse;
+	font-size: 0.9rem;
+}
+
+body > article x-body table tbody tr {
+	border-top: 1px solid #e4e1e4;
+}
+
+body > article x-body table td,
+body > article x-body table th {
+	padding: 0 8px;
+}
+
+body > article x-body table tr td:first-child,
+body > article x-body table tr th:first-child {
+	padding-right: 15px;
+	padding-left: 50px;
 }
 
 body > article x-body img,
@@ -381,7 +402,7 @@ body > article x-body > blockquote p {
 }
 
 .full-bleed,
-body > article x-body pre,
+body > article x-body > pre,
 body > article x-body img,
 body > article x-body x-3d-model,
 body > article x-body table,
