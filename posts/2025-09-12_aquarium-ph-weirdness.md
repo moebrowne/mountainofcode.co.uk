@@ -44,7 +44,7 @@ It noted that some pH meters are temperature compensated and sure enough there i
 thermistor present on the PCB. This didn't really fit though, the compensation amount for low temperatures is tiny and
 if it was temperature based then it wouldn't be as rhythmic.
 
-![](/images/aquarium-ph-pcb.jpg)
+![](/images/aquarium-ph-pcb.png)
 
 
 ## What Now?
