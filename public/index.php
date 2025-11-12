@@ -45,5 +45,6 @@ match($path) {
     '/2015/04/08/Ubuntu-Kernel-Upgrade-/boot-Partition' => header('Location: /ubuntu-kernel-upgrade-boot-partition', response_code: 308),
     '/2015/06/10/Caching-USB-ID-Database-Updates' => header('Location: /update-usbids-optimized', response_code: 308),
     '/2016/03/08/Apache-Hostname-Header' => header('Location: /apache-hostname-header', response_code: 308),
+    '/halloween' => header('Location: /halloween-2025', response_code: 308),
     default => require __DIR__ . '/../views/post.php',
 };
