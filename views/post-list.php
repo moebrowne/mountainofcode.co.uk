@@ -46,7 +46,7 @@ $posts = pipe(
                 </x-tag-list>
             </article>
         <?php endforeach; ?>
-        <a class="rss-feed-link" href="/feed.atom"><img src="/assets/rss.svg" alt="RSS Feed"/></a>
+        <a class="rss-feed-link" href="/feed.atom"><img src="/assets/rss.svg" alt="RSS Feed" width="16" height="16"/></a>
     </x-post-list>
 
 <?php require __DIR__ . "/../views/foot.php"; ?>
