@@ -8,6 +8,7 @@ use DateTimeImmutable;
 use League\CommonMark\Environment\Environment;
 use League\CommonMark\Extension\CommonMark\CommonMarkCoreExtension;
 use League\CommonMark\Extension\CommonMark\Node\Block\Heading;
+use League\CommonMark\Extension\Strikethrough\StrikethroughExtension;
 use League\CommonMark\Extension\Table\TableExtension;
 use League\CommonMark\MarkdownConverter;
 use League\CommonMark\Node\Query;
@@ -76,6 +77,7 @@ final class Post implements Stringable
             ->addExtension(new HighlightExtension($highlighter))
             ->addExtension(new TableExtension())
             ->addExtension(new StlModelViewerExtension())
+            ->addExtension(new StrikethroughExtension())
         ;
 
         return $this->postCache = new MarkdownConverter($environment)
