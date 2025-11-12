@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <title><?= isset($pageTitle) ? $pageTitle . ' - Mountain Of Code':'Mountain Of Code'; ?></title>
     <link href="/assets/style.css" rel="stylesheet" type="text/css">
-    <link href="/assets/code-style.css" rel="stylesheet" type="text/css">
+    <link rel="preload" href="/assets/code-style.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link href="/assets/code-style.css" rel="stylesheet" type="text/css"></noscript>
     <link rel="alternate" title="Blog Posts" type="application/atom+xml2" href="/feed.atom">
 
     <meta property="og:site_name" itemprop="name" content="Mountain Of Code">
