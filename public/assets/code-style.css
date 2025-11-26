@@ -1,70 +1,62 @@
-pre, code {
+pre {
     color: #F8F8F2;
     background-color: #282A36;
     line-height: 200%;
 }
 
-code {
-    padding: 2px 5px;
-    margin: 0 2px;
-    font-size: 0.9em;
-    border-radius: 4px;
-    word-break: keep-all;
-}
-
-.hl-keyword {
+pre > .hl-keyword {
     color: #FF79C6;
 }
 
-.hl-property {
+pre > .hl-property {
     color: #50FA7B;
 }
 
-.hl-attribute {
+pre > .hl-attribute {
     font-style: italic;
 }
 
-.hl-type {
+pre > .hl-type {
     color: #8BE9FD;
 }
 
-.hl-generic {
+pre > .hl-generic {
     color: #9d3af6;
 }
 
-.hl-value {
+pre > .hl-value {
     color: #F1FA8C;
 }
 
-.hl-literal {
+pre > .hl-literal {
     color: #F1FA8C;
 }
 
-.hl-number {
+pre > .hl-number {
     color: #F1FA8C;
 }
 
-.hl-variable {
+pre > .hl-variable {
     color: #F8F8F2;
 }
 
-.hl-comment {
+pre > .hl-comment {
     color: #9eade1;
 }
 
-.hl-blur {
+pre > .hl-blur {
     filter: blur(2px);
 }
 
-.hl-strong {
+pre > .hl-strong {
     font-weight: bold;
 }
 
-.hl-em {
+pre > .hl-em {
     font-style: italic;
 }
 
-.hl-addition {
+pre > .hl-addition {
     display: inline-block;
     min-width: 100%;
     background-color: #00FF0022;
@@ -73,7 +65,7 @@ code {
     width: calc(100% + 80px);
 }
 
-.hl-deletion {
+pre > .hl-deletion {
     display: inline-block;
     min-width: 100%;
     background-color: #FF000011;
@@ -82,7 +74,7 @@ code {
     width: calc(100% + 80px);
 }
 
-.hl-gutter {
+pre > .hl-gutter {
     display: inline-block;
     font-size: 0.9em;
     color: #555;
@@ -91,12 +83,63 @@ code {
     user-select: none;
 }
 
-.hl-gutter-addition {
+pre > .hl-gutter-addition {
     background-color: #34A853;
     color: #fff;
 }
 
-.hl-gutter-deletion {
+pre > .hl-gutter-deletion {
     background-color: #EA4334;
     color: #fff;
+}
+
+
+
+code {
+    background-color: #f4f4f4;
+    line-height: 200%;
+    padding: 2px 7px;
+    margin: 0 2px;
+    border-radius: 4px;
+    word-break: keep-all;
+}
+
+code > .hl-keyword {
+    color: #A01E7A;
+}
+
+code > .hl-property {
+    color: #0B5E0B;
+}
+
+code > .hl-attribute {
+    font-style: italic;
+}
+
+code > .hl-type {
+    color: #0066A1;
+}
+
+code > .hl-generic {
+    color: #5A1FA1;
+}
+
+code > .hl-value {
+    color: #704D00;
+}
+
+code > .hl-literal {
+    color: #704D00;
+}
+
+code > .hl-number {
+    color: #704D00;
+}
+
+code > .hl-variable {
+    color: #1A1A1A;
+}
+
+code > .hl-comment {
+    color: #4A5568;
 }
