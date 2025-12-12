@@ -19,13 +19,13 @@ http_response_code(404);
 <script>
     hexGrid.options.corruption.percentage = 100;
     hexGrid.options.sector.colours.corrupt = [
-        '#dd2c2c',
-        '#e8372e',
-        '#f23630',
-        '#ea2e2e',
-        '#e82e2e',
-        '#e52d2d',
-        '#e02c2c',
+        '#b12020',
+        '#b8271e',
+        '#c22620',
+        '#ba1e1e',
+        '#b81e1e',
+        '#b51d1d',
+        '#b01c1c',
     ];
     hexGrid.init(document.getElementById("hexGridEl"));
 </script>
