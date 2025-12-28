@@ -74,3 +74,13 @@ loop. I think recording the temperature of the soil, air and water will be enoug
 My hypothesis is that I will see the underground temperature drop quickly when the air temperature is lower than the
 soil temperature and vice versa.
 
+
+
+## Prior Art
+
+- <https://www.youtube.com/watch?v=s-41UF02vrU>
+- <https://www.youtube.com/watch?v=3o1jl2Qs9L4>
+- <https://www.youtube.com/watch?v=ofVLrPlro0I>
+- <https://www.youtube.com/watch?v=cALbn8b6MpA>
+- <https://www.youtube.com/watch?v=YTd3GwxwSPs>
+- <https://www.youtube.com/playlist?list=PL5JZOBQ5tC4di-yysZwuJ0oxpAqwOJx5h>
