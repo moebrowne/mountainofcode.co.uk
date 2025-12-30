@@ -6,6 +6,7 @@ namespace MoeBrowne;
 
 use DateTimeImmutable;
 use League\CommonMark\Environment\Environment;
+use League\CommonMark\Extension\Attributes\AttributesExtension;
 use League\CommonMark\Extension\CommonMark\CommonMarkCoreExtension;
 use League\CommonMark\Extension\CommonMark\Node\Block\Heading;
 use League\CommonMark\Extension\Strikethrough\StrikethroughExtension;
@@ -54,6 +55,13 @@ final class Post implements Stringable
             $markdownSource,
         );
 
+        // Replace magic include statements
+        $markdownSource = preg_replace_callback(
+            "#\+\((?<includePath>.+?)\)#s",
+            fn (array $matches): string => file_get_contents(__DIR__ . '/../' . $matches['includePath']),
+            $markdownSource,
+        );
+
         // Evaluate all HTML code blocks which have the magic eval comment
         $markdownSource = preg_replace_callback(
             "#```html\n<!--\[eval(?<attrs>[^\]]+)\]-->(?<code>.+?)```#s",
@@ -80,6 +88,7 @@ final class Post implements Stringable
             ->addExtension(new TableExtension())
             ->addExtension(new StlModelViewerExtension())
             ->addExtension(new StrikethroughExtension())
+            ->addExtension(new AttributesExtension())
         ;
 
         return $this->postCache = new MarkdownConverter($environment)
