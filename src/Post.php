@@ -42,6 +42,7 @@ final class Post implements Stringable
 
         $markdownSource = file_get_contents($this->filePath);
 
+        // Evaluate all PHP code blocks which have the magic eval comment
         $markdownSource = preg_replace_callback(
             "#```php\n//\[eval\](?<code>.+?)```#s",
             function (array $matches): string {
@@ -53,6 +54,7 @@ final class Post implements Stringable
             $markdownSource,
         );
 
+        // Evaluate all HTML code blocks which have the magic eval comment
         $markdownSource = preg_replace_callback(
             "#```html\n<!--\[eval(?<attrs>[^\]]+)\]-->(?<code>.+?)```#s",
             function (array $matches): string {
