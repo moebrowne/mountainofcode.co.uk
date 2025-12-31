@@ -41,7 +41,7 @@ http_response_code(500);
     inset: 0;"
 >
     ERROR
-    <?php if ($_SERVER['SERVER_NAME'] === 'localhost') : ?>
+    <?php if ($_SERVER['SERVER_NAME'] === '127.0.0.1') : ?>
     <div style="font-size: 1rem; text-align: left; background-color: rgba(0,0,0,0.6); padding: 50px; margin: 0; line-height: 1.6rem; text-wrap: nowrap; overflow-x: auto">
         <?php /** @var Throwable $exception */ ?>
 
