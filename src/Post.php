@@ -58,7 +58,15 @@ final class Post implements Stringable
         // Replace magic include statements
         $markdownSource = preg_replace_callback(
             "#\+\((?<includePath>.+?)\)#s",
-            fn (array $matches): string => file_get_contents(__DIR__ . '/../' . $matches['includePath']),
+            function (array $matches): string {
+                $path = __DIR__ . '/../' . $matches['includePath'];
+
+                if (file_exists($path) === false) {
+                    throw new \Exception('Unable to include file [' . $path . ']');
+                }
+
+                return file_get_contents($path);
+            },
             $markdownSource,
         );
 
