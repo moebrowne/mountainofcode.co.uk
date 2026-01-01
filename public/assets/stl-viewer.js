@@ -1092,7 +1092,7 @@ function STLViewer(elem) {
         geometry.boundingBox.getCenter(middle);
 
         // Center it
-        mesh.geometry.applyMatrix(new THREE.Matrix4().makeTranslation( -middle.x, -middle.y, -middle.z+10 ) );
+        mesh.geometry.applyMatrix(new THREE.Matrix4().makeTranslation( -middle.x, -middle.y, -middle.z ) );
 
         mesh.rotation.x = -Math.PI/2
 
@@ -1102,7 +1102,7 @@ function STLViewer(elem) {
             geometry.boundingBox.max.y,
             geometry.boundingBox.max.z
         )
-        camera.position.z = largestDimension * 1.5;
+        camera.position.z = largestDimension * 3;
         camera.position.x = largestDimension * 1.5;
         camera.position.y = largestDimension * 1.5;
 

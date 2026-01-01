@@ -116,7 +116,7 @@ x-3d-model {
 	display: block;
 	background: #fafafa;
 	width: 100%;
-	aspect-ratio: 5/2;
+	aspect-ratio: 5/3;
 }
 
 x-3d-model > canvas {
