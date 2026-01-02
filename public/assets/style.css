@@ -245,7 +245,8 @@ body > article:has(
 		x-body > pre:last-child,
 		x-body > .full-bleed:last-child,
 		x-body > :last-child > x-3d-model,
-		x-body > svg:last-child
+		x-body > svg:last-child,
+		x-body > table:last-child
 	)
 {
 	padding-bottom: 0;
