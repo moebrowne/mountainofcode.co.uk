@@ -30,10 +30,17 @@ The new content is highlighted in this screenshot:
 
 ![](/images/kagi-token-tally-screenshot.png)
 
-For now, I haven't published it as an official Firefox Addon, but I'll get around to it sometime or better yet Kagi will
-implement it as a first party feature.
+<strike>For now, I haven't published it as an official Firefox Addon, but I'll get around to it sometime or better yet Kagi will
+implement it as a first party feature.</strike>
 
-For now if you want to install it, you can get a copy of the code from GitHub:
+## Update (2 Jan 25) - Extension Published
+
+The extension has been officially published: <https://addons.mozilla.org/en-US/firefox/addon/kagi-token-tally/>
+
+
+
+## The Code
+
+If you want to take a peek at the source code it is available here:
 
 [<img style="max-width: 500px; margin: 0 auto;" src="https://opengraph.githubassets.com/d251596805e19d7c30dc3ff2965ccc41940d845564597fa22fb18bbac4c8e01e/moebrowne/kagi-assistant-token-tally">](https://github.com/moebrowne/kagi-assistant-token-tally)
-
