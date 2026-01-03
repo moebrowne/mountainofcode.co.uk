@@ -2,7 +2,7 @@
     "name": "moebrowne/mountainofcode.co.uk",
     "type": "project",
     "require": {
-        "php": "^8.4",
+        "php": "^8.5",
         "league/commonmark": "^2.6",
         "ext-mbstring": "*",
         "tempest/highlight": "^2.11",
