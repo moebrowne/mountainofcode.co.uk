@@ -1,14 +1,16 @@
+<?php $pageTitle = isset($pageTitle) ? $pageTitle . ' - Mountain Of Code':'Mountain Of Code'; ?>
 <!doctype html>
 <html lang="en" itemscope itemtype="http://schema.org/Blog">
 <head>
     <meta charset="UTF-8">
-    <title><?= isset($pageTitle) ? $pageTitle . ' - Mountain Of Code':'Mountain Of Code'; ?></title>
+    <title><?= $pageTitle ?></title>
     <link href="/assets/style.css" rel="stylesheet" type="text/css">
     <link rel="preload" href="/assets/code-style.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <noscript><link href="/assets/code-style.css" rel="stylesheet" type="text/css"></noscript>
     <link rel="alternate" title="Blog Posts" type="application/atom+xml2" href="/feed.atom">
 
     <meta property="og:site_name" itemprop="name" content="Mountain Of Code">
+    <meta property="og:title" itemprop="name" content="<?= $pageTitle ?>">
     <meta property="og:url" itemprop="url" content="https://www.mountainofcode.co.uk<?= e($_SERVER['REQUEST_URI']); ?>">
     <meta name="description" property="og:description" itemprop="description" content="Mountain of code is a collection of web and dev ops related projects mixed with a little hacking and tinkering.">
     <meta name="viewport" content="width=device-width, initial-scale=1">
