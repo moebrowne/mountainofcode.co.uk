@@ -21,3 +21,8 @@ function pipe(mixed $value, callable ...$operations): mixed
 
     return $value;
 }
+
+function e(string $string): string
+{
+    return htmlentities($string, ENT_QUOTES, 'UTF-8');
+}
