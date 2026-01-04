@@ -9,6 +9,7 @@ function pipe(mixed $value, callable ...$operations): mixed
             is_int($name) => $callback,
             str_starts_with($name, 'filter') => fn() => array_filter($value, $callback),
             str_starts_with($name, 'map') => fn() => array_map($callback, $value),
+            str_starts_with($name, 'find') => fn() => array_find($value, $callback),
             str_starts_with($name, 'sortBy') => function () use (&$value, $callback): array {
                 usort($value, $callback);
                 return $value;

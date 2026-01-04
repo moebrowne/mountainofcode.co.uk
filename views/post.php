@@ -4,17 +4,11 @@ use MoeBrowne\Post;
 
 require __DIR__ . '/../vendor/autoload.php';
 
-$postPaths = array_reverse(glob(__DIR__ . '/../posts/*'));
-
-$posts = array_map(
-    fn (string $postPath): Post => new Post($postPath),
-    $postPaths,
-);
-
-/** @var Post $post */
-$post = array_find(
-    $posts,
-    fn (Post $post): bool => $post->getUrl() === $_SERVER['REQUEST_URI'],
+/** @var Post|null $post */
+$post = pipe(
+    array_reverse(glob(__DIR__ . '/../posts/*')),
+    mapToDto: fn (string $postPath): Post => new Post($postPath),
+    findPostWhichMatchesUri: fn (Post $post): bool => $post->getUrl() === $_SERVER['REQUEST_URI']
 );
 
 if ($post === null) {
