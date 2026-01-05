@@ -14,7 +14,7 @@ var hexGrid = {
 
         // Whether to make sectors randomly change, and on what time period
         randomise: {
-            enable: true,
+            enable: window.matchMedia('(prefers-reduced-motion: reduce)').matches === false,
             interval: 100 //ms
         },
 

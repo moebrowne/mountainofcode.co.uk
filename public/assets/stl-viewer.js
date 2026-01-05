@@ -1074,7 +1074,7 @@ function STLViewer(elem) {
     controls.dampingFactor = 0.1;
     controls.enableZoom = false;
     controls.enablePan = false;
-    controls.autoRotate = true;
+    controls.autoRotate = window.matchMedia('(prefers-reduced-motion: reduce)').matches === false;
     controls.autoRotateSpeed = 0.16;
 
     var scene = new THREE.Scene();
