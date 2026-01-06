@@ -3,6 +3,8 @@
 #raspberry pi
 #supercaps
 
+![](/images/raspberry-pi-supercaps.png)
+
 Super capacitors are awesome, cheap, easily obtainable and can be a little dangerous. They have a massive energy density
 and are willing to give up their energy very VERY quickly.
 

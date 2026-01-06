@@ -7,6 +7,8 @@
 #raspberry pi
 #usb
 
+![](/images/raspberry-pi-raid.png)
+
 Using a Raspberry Pi seems to make a lot of sense if you're in the market for a small NAS server, it's low cost, 
 low profile, low energy etc...
 
