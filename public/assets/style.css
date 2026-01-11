@@ -528,6 +528,16 @@ word-definition > dl > dd {
 
 
 
+.checkerboard-background {
+	background: repeating-conic-gradient(
+		#e1e1e1 0deg 90deg,
+		transparent 90deg 180deg
+	) 0 0 / 50px 50px;
+	background-attachment: fixed;
+}
+
+
+
 kbd {
 	position: relative;
 	padding: 4px 6px;
