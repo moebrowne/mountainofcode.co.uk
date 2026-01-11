@@ -21,7 +21,9 @@ class MetaImage
     public function __construct(string $title, string $url, int $canvasWidth, int $canvasHeight)
     {
         // Strip emoji because the font doesn't support it
-        $title = preg_replace('/[^\x20-\x7E]/u', '', $title);
+        $title = $title
+            |> (fn(string $title) => preg_replace('/[^\x20-\x7E]/u', '', $title))
+            |> trim(...);
 
         $this->imageWidth = $canvasWidth;
         $this->imageHeight = $canvasHeight;
