@@ -4,13 +4,14 @@ declare(strict_types=1);
 
 $scadFilePaths = glob(__DIR__ . '/public/3d/*.scad');
 $modelFilter = $argv[1] ?? null;
-$exportFormat = $argv[2] ?? 'update-existing';
+$exportFormat = $argv[2] ?? null;
 
 foreach ($scadFilePaths as $scadFilePath) {
     $baseFileName = basename($scadFilePath, '.scad');
     $fileName = basename($scadFilePath);
     $exitCode = null;
     $output = null;
+    $includePreview = preg_match('#^(?!.*?//).*%#m', file_get_contents($scadFilePath)) === 1;
 
     if ($modelFilter !== null && str_contains($fileName, $modelFilter) === false) {
         continue;
@@ -26,21 +27,19 @@ foreach ($scadFilePaths as $scadFilePath) {
         if ($scadParts === []) {
             echo 'Rendering ' . $fileName . '... ';
 
-            $pngPath = dirname($scadFilePath) . '/' . $baseFileName . '.png';
-            $stlPath = dirname($scadFilePath) . '/' . $baseFileName . '.stl';
+            if ($exportFormat === null || $exportFormat === 'png') {
+                echo '[PNG] ';
+                renderScadToPng($scadFilePath, dirname($scadFilePath) . '/' . $baseFileName . '.png');
 
-            if ($exportFormat === 'update-existing') {
-                if (file_exists($pngPath)) {
-                    renderScadToPng($scadFilePath, $pngPath, true);
+                if ($includePreview) {
+                    echo '[PNG--preview] ';
+                    renderScadToPng($scadFilePath, dirname($scadFilePath) . '/' . $baseFileName . '--preview.png', true);
                 }
-                if (file_exists($stlPath)) {
-                    renderScadToStl($scadFilePath, $stlPath);
-                }
-            } else {
-                match($exportFormat) {
-                    'png' => renderScadToPng($scadFilePath, $pngPath, true),
-                    'stl' => renderScadToStl($scadFilePath, $stlPath),
-                };
+            }
+
+            if ($exportFormat === null || $exportFormat === 'stl') {
+                echo '[STL] ';
+                renderScadToStl($scadFilePath, dirname($scadFilePath) . '/' . $baseFileName . '.stl');
             }
 
             echo 'Done' . PHP_EOL;
@@ -49,21 +48,19 @@ foreach ($scadFilePaths as $scadFilePath) {
                 $scadPartFileName = str_replace(['(', ')', ';'], '', $scadPart);
                 echo 'Rendering ' . $fileName . ' [' . $scadPartFileName . ']... ';
 
-                $pngPath = dirname($scadFilePath) . '/' . $baseFileName . '_' . $scadPartFileName . '.png';
-                $stlPath = dirname($scadFilePath) . '/' . $baseFileName . '_' . $scadPartFileName . '.stl';
+                if ($exportFormat === null || $exportFormat === 'png') {
+                    echo '[PNG] ';
+                    renderScadPartToPng($scadFilePath, dirname($scadFilePath) . '/' . $baseFileName . '_' . $scadPartFileName . '.png', $scadPart);
 
-                if ($exportFormat === 'update-existing') {
-                    if (file_exists($pngPath)) {
-                        renderScadPartToPng($scadFilePath, $pngPath, $scadPart, true);
+                    if ($includePreview) {
+                        echo '[PNG--preview] ';
+                        renderScadPartToPng($scadFilePath, dirname($scadFilePath) . '/' . $baseFileName . '_' . $scadPartFileName . '--preview.png', $scadPart, true);
                     }
-                    if (file_exists($stlPath)) {
-                        renderScadPartToStl($scadFilePath, $stlPath, $scadPart);
-                    }
-                } else {
-                    match($exportFormat) {
-                        'png' => renderScadPartToPng($scadFilePath, $pngPath, $scadPart, true),
-                        'stl', => renderScadPartToStl($scadFilePath, $stlPath, $scadPart),
-                    };
+                }
+
+                if ($exportFormat === null || $exportFormat === 'stl') {
+                    echo '[STL] ';
+                    renderScadPartToStl($scadFilePath, dirname($scadFilePath) . '/' . $baseFileName . '_' . $scadPartFileName . '.stl', $scadPart);
                 }
 
                 echo 'Done' . PHP_EOL;
