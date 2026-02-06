@@ -77,3 +77,16 @@ The IPA was actually acting as a filter, blocking the alpha particles but allowi
 The gamma rays leave much smaller trails, they are also emitted less frequently, these two things
 together meant that they couldn't be seen amongst the trails of the alpha particles.
 
+
+## 3D Printed Parts
+
+The base was designed in OpenSCAD and 3D printed in PLA.
+
+|x|(/3d/cloud-chamber-base.stl)
+
+```openscad
++(/public/3d/cloud-chamber-base.scad)
+```
+
+- [Download STL](/3d/cloud-chamber-base.stl){download=true}
+- [Download SCAD](/3d/cloud-chamber-base.scad){download=true}

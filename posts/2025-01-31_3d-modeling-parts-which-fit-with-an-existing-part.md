@@ -11,7 +11,7 @@ This is easy if you already have an STL of the part, then you can just `{opensca
 well-know part, like a Raspberry Pi, then you can often find pre-made models on sites like
 [Thingiverse](https://www.thingiverse.com/) or [Printables](https://www.printables.com).
 
-|x|(/3d/Raspberry Pi 4 Model B.stl)
+|x|(/3d/reference/Raspberry Pi 4 Model B.stl)
 
 It often takes a little while to model the existing part but overall I believe it's worth doing because it enables you
 to iterate faster. You no longer need to print out a physical copy of the part only to discover that it doesn't quite

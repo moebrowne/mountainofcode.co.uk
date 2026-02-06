@@ -14,6 +14,17 @@ function pipe(mixed $value, callable ...$operations): mixed
                 usort($value, $callback);
                 return $value;
             },
+            str_starts_with($name, 'keyBy') => function() use ($callback, $value) {
+                $result = [];
+
+                array_walk(
+                    $value,
+                    function($value) use ($callback, &$result) {
+                        $result[$callback($value)] = $value;
+                    });
+
+                return $result;
+            },
             default => $callback,
         };
 
