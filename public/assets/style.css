@@ -90,7 +90,7 @@ a[href^="https://"]:not(:has(*))::after {
 	background-color: currentColor;
 }
 
-img {
+img, video {
 	display: block;
 	width: 100%;
 	height: auto;
@@ -242,6 +242,7 @@ body > article {
 
 body > article:has(
 		x-body > :last-child > img,
+		x-body > :last-child > video,
 		x-body > pre:last-child,
 		x-body > .full-bleed:last-child,
 		x-body > :last-child > x-3d-model,
@@ -337,6 +338,7 @@ body > article x-body table tr th:first-child {
 }
 
 body > article x-body img,
+body > article x-body video,
 body > article x-body svg {
 	background: #fafafa;
 	margin: 20px 0;
@@ -405,6 +407,7 @@ body > article x-body > blockquote p {
 .full-bleed,
 body > article x-body > pre,
 body > article x-body img,
+body > article x-body video,
 body > article x-body x-3d-model,
 body > article x-body table,
 body > article x-body svg {
@@ -425,6 +428,7 @@ body > article x-body svg {
 	body > article x-body pre,
 	body > article x-body table,
 	body > article x-body img,
+	body > article x-body video,
 	body > article x-body x-3d-model,
 	body > article x-body svg {
 		margin-right: -20px;
