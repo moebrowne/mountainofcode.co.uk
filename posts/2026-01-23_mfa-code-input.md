@@ -10,4 +10,4 @@ tested typing in the code.
 
 There are so many ways to interact with inputs. If you try and reimplement them in JS you will miss some: copy/paste,
 arrow keys, backspace, home, end, insert mode typing, click-drag to highlight some/all, double click to highlight all,
-screen readers, etc, etc.
+screen readers, password managers, etc, etc.
