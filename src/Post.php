@@ -164,6 +164,6 @@ final class Post implements Stringable
 
     public function getWordCount(): int
     {
-        return str_word_count($this->getBody());
+        return str_word_count(html_entity_decode(strip_tags($this->getBody())));
     }
 }
