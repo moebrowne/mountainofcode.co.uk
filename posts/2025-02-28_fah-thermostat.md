@@ -44,32 +44,37 @@ CURRENT_TEMP=$(curl --request POST \
   --header 'Authorization: Token {REDACTED}' \
   --header 'Accept: application/json' \
   --header 'Content-type: application/vnd.flux' \
-  --data 'from(bucket: "{REDACTED}")
-  |> range(start: -3h)
-  |> filter(fn: (r) =>
-    r._measurement == "temperature"
-  )
-  |> aggregateWindow(every: 3h, fn: mean)' \
+  --data ' from(bucket: "{REDACTED}")
+      |> range(start: -3h)
+      |> filter(fn: (r) => r._measurement == "temperature")
+      |> mean()' \
  | head -n 2 \
  | tail -n 1 \
- | awk -F "\"*,\"*" '{print $7}' \
+ | awk -F "\"*,\"*" '{print $6}' \
  | grep -oE '^[0-9]+')
 
+echo -n "$(date --iso-8601=minutes): "
+if [[ $CURRENT_TEMP = "" ]]; then
+    echo -n "Failed to get temperature! "
+else
+    echo -n "${CURRENT_TEMP}C "
+fi
 
-# Way too hot, stop folding
 if [[ $CURRENT_TEMP -ge $MAX_TEMP ]]; then
+    echo "=> PAUSING"
     /usr/bin/fahctl pause
     exit
 fi
 
-# Too hot, finish the current task
-if [[ $CURRENT_TEMP -ge $(( $TARGET_TEMP+$HISTO )) ]]; then
+if [[ $CURRENT_TEMP -ge $(( $TARGET_TEMP+$HISTO )) ]] || [[ $CURRENT_TEMP == "" ]]; then
+    echo "=> FINISHING"
     /usr/bin/fahctl finish
     exit
 fi
 
-# Too cold, start Folding
+
 if [[ $CURRENT_TEMP -lt $(( $TARGET_TEMP-$HISTO )) ]]; then
+    echo "=> STARTING"
     /usr/bin/fahctl fold
     exit
 fi
