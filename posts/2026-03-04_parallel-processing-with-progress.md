@@ -81,4 +81,4 @@ kill -s SIGUSR1 <XARGS_PID>
 kill -s SIGUSR2 <XARGS_PID>
 ```
 
-By default, it runs one worker per CPU. For IO bound tasks adding more can speed things up considerably
+By default, it runs one worker per CPU. For IO bound tasks adding more can speed things up considerably.
