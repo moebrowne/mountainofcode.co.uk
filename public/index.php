@@ -2,6 +2,8 @@
 
 declare(strict_types=1);
 
+header("Content-Security-Policy: default-src 'self'; script-src 'sha256-1jAmyYXcRq6zFldLe/GCgIDJBiOONdXjTLgEFMDnDSM=' 'unsafe-hashes' 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' opengraph.githubassets.com; font-src 'self'; connect-src 'self'; frame-src youtube-nocookie.com; frame-ancestors 'none'; base-uri 'self'; form-action 'self'");
+
 set_exception_handler(fn (Throwable $exception) => require __DIR__ . '/../views/error.php');
 
 $path = $_SERVER['REQUEST_URI'];
