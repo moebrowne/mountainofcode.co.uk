@@ -190,3 +190,5 @@ window.addEventListener('resize', () => {
         100,
     );
 });
+
+window.requestIdleCallback(() => hexGrid.init(document.getElementById("hexGridEl")));
