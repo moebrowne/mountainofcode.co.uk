@@ -10,6 +10,7 @@ $posts = array_map(
 );
 
 header('Content-Type: application/atom+xml;charset=UTF-8');
+header('Access-Control-Allow-Origin: *');
 
 ?>
 <?xml version="1.0" encoding="UTF-8"?>
