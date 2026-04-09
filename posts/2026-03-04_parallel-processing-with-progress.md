@@ -61,8 +61,8 @@ hash=\$(echo '%' | sha256sum | head -c 16)
 
 ## Result Files
 
-The output of each process is written to a dedicated file: `results/{HASH}`. `{HASH}` is the hash of the line in the
-source file. Both stdout and stderr are redirected.
+The output of each process is written to a dedicated file: `results/{HASH}`. Where `{text}{HASH}` is the hash of the
+line in the source file. Both stdout and stderr are redirected.
 
 Additionally, the first line of each result file is the line which was processed. This is to make it possible to find
 the result of a specific process via grep or similar.
