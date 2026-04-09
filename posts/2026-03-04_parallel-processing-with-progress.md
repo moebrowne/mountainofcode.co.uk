@@ -68,3 +68,17 @@ Additionally, the first line of each result file is the line which was processed
 the result of a specific process via grep or similar.
 
 
+
+## Dynamic Worker Count
+
+The number of workers can be adjusted while the process is running by sending signals to the xargs process:
+
+```bash
+# More workers
+kill -s SIGUSR1 <XARGS_PID>
+
+# Less workers
+kill -s SIGUSR2 <XARGS_PID>
+```
+
+By default, it runs one worker per CPU. For IO bound tasks adding more can speed things up considerably
