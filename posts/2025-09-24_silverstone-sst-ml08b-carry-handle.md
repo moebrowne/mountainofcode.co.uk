@@ -41,8 +41,8 @@ the computer multiplied by the leverage of the tube caused the other loop to exp
 I think I need to adjust the design so the carbon fibre tube is positivily retained, relying on friction isn't enough.
 
 I needed it the next day, so I printed it again with thicker walls, but I think this was a mistake. If it fails I'd
-rather the loops failed rather than deform the case or shearing off a screw. I will adjust the z-seam so it doesn't
-align with a corner.
+rather the loops failed than deform the case or shearing off a screw. I will adjust the z-seam so it doesn't align with
+a corner.
 
 
 |x|(/3d/silverstone-sst-ml08b-carry-handle_handle.stl)
