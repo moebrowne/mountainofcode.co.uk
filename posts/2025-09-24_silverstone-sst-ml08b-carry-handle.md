@@ -29,6 +29,22 @@ layers. Admittedly, it is a little annoying to get the case apart now, but that 
 small price to pay for the extra strength.
 
 
+## Update (15 Apr 2026)
+
+I broke it.
+
+I'd noticed the carbon fibre tube was starting to get loose and as I went to lift it one end slipped out. The weight of
+the computer multiplied by the leverage of the tube caused the other loop to explode, scattering itself across the room.
+
+![](/images/silverstone-handle-broken.jpg)
+
+I think I need to adjust the design so the carbon fibre tube is positivily retained, relying on friction isn't enough.
+
+I needed it the next day, so I printed it again with thicker walls, but I think this was a mistake. If it fails I'd
+rather the loops failed rather than deform the case or shearing off a screw. I will adjust the z-seam so it doesn't
+align with a corner.
+
+
 |x|(/3d/silverstone-sst-ml08b-carry-handle_handle.stl)
 |x|(/3d/silverstone-sst-ml08b-carry-handle_cleat.stl)
 
