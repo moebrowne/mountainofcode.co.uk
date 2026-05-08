@@ -33,7 +33,7 @@ The new content is highlighted in this screenshot:
 <strike>For now, I haven't published it as an official Firefox Addon, but I'll get around to it sometime or better yet Kagi will
 implement it as a first party feature.</strike>
 
-## Update (2 Jan 25) - Extension Published
+## 2 Jan 2025 - Extension Published
 
 The extension has been officially published: <https://addons.mozilla.org/en-US/firefox/addon/kagi-token-tally/>
 

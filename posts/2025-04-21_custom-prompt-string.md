@@ -96,7 +96,7 @@ PROMPT_COMMAND=set_bash_prompt
 ```
 
 
-## Update (27 Sept 2025) - Now With More Kubernetes
+## 27 Sept 2025 - Now With More Kubernetes
 
 I found it useful as a sanity check to know which Kubernetes cluster my current CLI is targetting. It will only show
 once a `kubectl` command is run so it isn't constantly cluttering up the CLI. This isn't ideal as you'd want to know

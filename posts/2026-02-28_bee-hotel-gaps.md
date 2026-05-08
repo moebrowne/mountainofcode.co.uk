@@ -33,7 +33,7 @@ close it up, I added a small paper shim to the back. That did the trick.
 Hopefully this coming season the bees will use all the tubes once more.
 
 
-## 8 May 2026: Beeees!
+## 8 May 2026 - Beeees!
 
 It looks like it worked! The bees are busily coming and going. One of the 'rooms' has already been filled!
 
