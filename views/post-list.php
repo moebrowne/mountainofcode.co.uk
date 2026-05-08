@@ -4,6 +4,7 @@ use MoeBrowne\Post;
 
 require __DIR__ . '/../vendor/autoload.php';
 
+/** @var array<Post> $posts */
 $posts = pipe(
     glob(__DIR__ . '/../posts/*'),
     mapToDto: fn (string $postPath): Post => new Post($postPath),
