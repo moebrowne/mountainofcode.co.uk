@@ -2,7 +2,12 @@
 
 declare(strict_types=1);
 
-header("Content-Security-Policy: default-src 'self'; script-src 'sha256-1jAmyYXcRq6zFldLe/GCgIDJBiOONdXjTLgEFMDnDSM=' 'unsafe-hashes' 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data: opengraph.githubassets.com; font-src 'self'; connect-src 'self'; frame-src youtube-nocookie.com; frame-ancestors 'none'; base-uri 'self'; form-action 'self'");
+use Random\Engine\Secure;
+use Random\Randomizer;
+
+define('CSP_NONCE', base64_encode(new Randomizer(new Secure())->getBytes(16)));
+
+header("Content-Security-Policy: default-src 'self'; script-src 'sha256-1jAmyYXcRq6zFldLe/GCgIDJBiOONdXjTLgEFMDnDSM=' 'unsafe-hashes' 'self' 'nonce-" . CSP_NONCE . "'; style-src 'self' 'unsafe-inline'; img-src 'self' data: opengraph.githubassets.com; font-src 'self'; connect-src 'self'; frame-src youtube-nocookie.com; frame-ancestors 'none'; base-uri 'self'; form-action 'self'");
 
 set_exception_handler(fn (Throwable $exception) => require __DIR__ . '/../views/error.php');
 

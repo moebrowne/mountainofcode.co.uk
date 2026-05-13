@@ -29,7 +29,7 @@ Click anywhere below!
 
 <canvas id="cont"></canvas>
 
-<script>
+<script nonce="CSP_NONCE">
     class Hexplosion
     {
         // Set everything up
@@ -197,7 +197,7 @@ Click anywhere below!
 
 </script>
 
-<script>
+<script nonce="CSP_NONCE">
     const hexplosion = new Hexplosion(document.getElementById("cont"));
     document.addEventListener('resize', e => hexplosion.resizeCanvas());
 </script>

@@ -144,6 +144,8 @@ final class Post implements Stringable
             $content = str_replace('<p>' . $key . '</p>', $iframeHtml, $content);
         }
 
+        $content = str_replace('CSP_NONCE', CSP_NONCE, $content);
+
         return preg_replace('/<h1>[^<]+<\/h1>/', '', $content);
     }
 

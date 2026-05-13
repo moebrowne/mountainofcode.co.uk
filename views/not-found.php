@@ -16,7 +16,7 @@ http_response_code(404);
 <body style="background-color: #dd2c2c">
 <canvas id="hexGridEl" style="position: fixed; z-index:-1; inset: 0; "></canvas>
 <script src="/assets/hexGrid.js"></script>
-<script>
+<script nonce="CSP_NONCE">
     hexGrid.options.corruption.percentage = 100;
     hexGrid.options.sector.colours.corrupt = [
         '#b12020',
