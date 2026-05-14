@@ -4,11 +4,6 @@ use MoeBrowne\Post;
 
 require __DIR__ . '/../vendor/autoload.php';
 
-if (str_ends_with($_SERVER['REQUEST_URI'], '.png')) {
-    require __DIR__ . '/post-meta-image.php';
-    exit;
-}
-
 /** @var Post|null $post */
 $post = pipe(
     array_reverse(glob(__DIR__ . '/../posts/*')),
