@@ -1,11 +1,8 @@
-<?php
-http_response_code(500);
-?>
 <!doctype html>
 <html lang="en" itemscope itemtype="http://schema.org/Blog">
 <head>
     <meta charset="UTF-8">
-    <title>Error</title>
+    <title>Error <?= http_response_code() ?></title>
     <link href='/assets/style.css' rel='stylesheet' type='text/css'>
 
     <meta property="og:site_name" itemprop="name" content="Mountain Of Code">
@@ -40,8 +37,8 @@ http_response_code(500);
     text-align: center;
     inset: 0;"
 >
-    ERROR
-    <?php if ($_SERVER['SERVER_NAME'] === '127.0.0.1') : ?>
+    ERROR <?= http_response_code() ?>
+    <?php if ($_SERVER['SERVER_NAME'] === '127.0.0.1' && isset($exception)) : ?>
     <div style="font-size: 1rem; text-align: left; background-color: rgba(0,0,0,0.6); padding: 50px; margin: 0; line-height: 1.6rem; text-wrap: nowrap; overflow-x: auto">
         <?php /** @var Throwable $exception */ ?>
 
