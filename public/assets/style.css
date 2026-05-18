@@ -247,7 +247,8 @@ body > article:has(
 		x-body > .full-bleed:last-child,
 		x-body > :last-child > x-3d-model,
 		x-body > svg:last-child,
-		x-body > table:last-child
+		x-body > table:last-child,
+		x-body > x-audio:last-child
 	)
 {
 	padding-bottom: 0;
@@ -410,7 +411,8 @@ body > article x-body img,
 body > article x-body video,
 body > article x-body x-3d-model,
 body > article x-body table,
-body > article x-body svg {
+body > article x-body svg,
+body > article x-body x-audio {
 	width: calc(100% + 140px);
 	margin-right: -70px;
 	margin-left: -70px;
@@ -430,7 +432,8 @@ body > article x-body svg {
 	body > article x-body img,
 	body > article x-body video,
 	body > article x-body x-3d-model,
-	body > article x-body svg {
+	body > article x-body svg,
+	body > article x-body x-audio {
 		margin-right: -20px;
 		margin-left: -20px;
 		width: calc(100% + 40px);

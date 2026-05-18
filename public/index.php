@@ -58,5 +58,6 @@ match (true) {
     $path === '/2016/03/08/Apache-Hostname-Header' => header('Location: /apache-hostname-header', response_code: 308),
     $path === '/halloween' => header('Location: /halloween-2025', response_code: 308),
     str_ends_with($path, '.png') => require __DIR__ . '/../views/post-meta-image.php',
+    str_starts_with($path, '/audio-waveform-image') => require __DIR__ . '/../views/audio-waveform-image.php',
     default => require __DIR__ . '/../views/post.php',
 };

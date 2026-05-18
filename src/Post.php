@@ -146,6 +146,10 @@ final class Post implements Stringable
 
         $content = str_replace('CSP_NONCE', CSP_NONCE, $content);
 
+        if (str_contains($content, '<x-audio')) {
+            $content .= '<script src="/assets/📻.js" defer></script>';
+        }
+
         return preg_replace('/<h1>[^<]+<\/h1>/', '', $content);
     }
 
