@@ -35,3 +35,7 @@ mt_srand(crc32($seed)); // crc32 is a quick and dirty way to convert strings to 
 $number = mt_rand(5, 30);
 ```
 
+
+## Further Posts
+
+- [Pixel Art](/iron-bloom-art)
