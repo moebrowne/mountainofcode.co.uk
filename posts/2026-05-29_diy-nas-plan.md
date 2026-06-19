@@ -17,6 +17,6 @@ achieve the following:
 
 I could've gone out and bought something pre-made which checked most of the boxes, but where's the fun in that 😁.
 
-I will create a posts for each major milestone rather than have a single monolithic post.
+I will create posts for each major milestone rather than have a single monolithic post.
 
 1. [Enclosure](/diy-nas-enclosure)
