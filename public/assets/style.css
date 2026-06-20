@@ -150,7 +150,7 @@ x-post-list > article time {
 	font-size: 0.9rem;
 	font-family: 'Share Tech Mono', monospace;
 	text-wrap: nowrap;
-	min-width: 60px;
+	width: 60px;
 }
 
 x-post-list > article h1 {
