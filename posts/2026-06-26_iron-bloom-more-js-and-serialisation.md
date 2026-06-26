@@ -49,7 +49,7 @@ brackets, `[F]` (floor), entities in curly braces, `{text}{D}` (door) and modifi
 tile/entity like this: `{text}{D+l}` (door with a lock).
 
 Each primitive also needed a unique ID. I used a `#` to denote an ID: `[W#41]`. Without the ID it wasn't possible for
-the client to communicate with the backend about an entity. e.g. pickup item #41.
+the client to communicate with the backend about an entity. e.g. pickup item `#41`.
 
 This totally ruined the ASCII-art aesthetic:
 
