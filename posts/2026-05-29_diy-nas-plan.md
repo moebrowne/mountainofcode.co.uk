@@ -20,4 +20,5 @@ I could've gone out and bought something pre-made which checked most of the boxe
 I will create posts for each major milestone rather than have a single monolithic post.
 
 1. [Enclosure](/diy-nas-enclosure)
-1. [Storage](/diy-nas-storage)
+2. [Storage](/diy-nas-storage)
+3. [Filesystem](/diy-nas-filesystem)
