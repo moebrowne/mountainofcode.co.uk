@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace MoeBrowne;
 
+use Composer\InstalledVersions;
 use DateTimeImmutable;
 use League\CommonMark\Environment\Environment;
 use League\CommonMark\Extension\Attributes\AttributesExtension;
@@ -26,8 +27,10 @@ use Tempest\Highlight\Highlighter;
 
 final class Post implements Stringable
 {
-    private(set) RenderedContentInterface $postCache;
-    private array $frameInjections = [];
+    private const string CACHE_DIRECTORY = __DIR__ . '/../.cache';
+
+    private(set) RenderedContentInterface $parsedMarkdownCache;
+    private array $contentInjections = [];
 
     public function __construct(
         private(set) string $filePath,
@@ -35,10 +38,10 @@ final class Post implements Stringable
     {
     }
 
-    public function parseMarkdown()
+    public function parsedMarkdown(): RenderedContentInterface
     {
-        if (isset($this->postCache)) {
-            return $this->postCache;
+        if (isset($this->parsedMarkdownCache)) {
+            return $this->parsedMarkdownCache;
         }
 
         $markdownSource = file_get_contents($this->filePath);
@@ -49,8 +52,12 @@ final class Post implements Stringable
             function (array $matches): string {
                 ob_start();
                 eval($matches['code']);
+                $content = ob_get_clean();
 
-                return ob_get_clean();
+                $placeholder = "--INJECTION:" . count($this->contentInjections);
+                $this->contentInjections[$placeholder] = $content;
+
+                return $placeholder;
             },
             $markdownSource,
         );
@@ -65,7 +72,10 @@ final class Post implements Stringable
                     throw new \Exception('Unable to include file [' . $path . ']');
                 }
 
-                return file_get_contents($path);
+                $placeholder = "--INJECTION:" . count($this->contentInjections);
+                $this->contentInjections[$placeholder] = file_get_contents($path);
+
+                return $placeholder;
             },
             $markdownSource,
         );
@@ -74,33 +84,53 @@ final class Post implements Stringable
         $markdownSource = preg_replace_callback(
             "#```html\n<!--\[eval(?<attrs>[^\]]+)\]-->(?<code>.+?)```#s",
             function (array $matches): string {
-                $key = 'FRAME' . base64_encode(random_bytes(8));
+                $placeholder = "--INJECTION:" . count($this->contentInjections);
 
-                $this->frameInjections[$key] = '<iframe ' . $matches['attrs'] . ' srcdoc="' . htmlentities($matches['code']) . '"></iframe>';
+                $this->contentInjections[$placeholder] = '<iframe ' . $matches['attrs'] . ' srcdoc="' . htmlentities($matches['code']) . '"></iframe>';
 
-                return $key;
+                return $placeholder;
             },
             $markdownSource,
         );
 
-        $highlighter = new Highlighter()
-            ->addLanguage(new OpenscadLanguage())
-            ->addLanguage(new BashLanguage())
-        ;
+        $cachePath = $this->getCachePath($markdownSource);
 
-        $environment = new Environment()
-            ->addExtension(new CommonMarkCoreExtension())
-            ->addExtension(new SmartImageExtension())
-            ->addExtension(new MarkdownTagExtension())
-            ->addExtension(new HighlightExtension($highlighter))
-            ->addExtension(new TableExtension())
-            ->addExtension(new StlModelViewerExtension())
-            ->addExtension(new StrikethroughExtension())
-            ->addExtension(new AttributesExtension())
-        ;
+        if (is_file($cachePath)) {
+            $parsedMarkdown = unserialize(file_get_contents($cachePath), ['allowed_classes' => true]);
+        }
+        else {
+            $parsedMarkdown = new MarkdownConverter(
+                new Environment()
+                    ->addExtension(new CommonMarkCoreExtension())
+                    ->addExtension(new SmartImageExtension())
+                    ->addExtension(new MarkdownTagExtension())
+                    ->addExtension(new HighlightExtension(
+                        new Highlighter()
+                            ->addLanguage(new OpenscadLanguage())
+                            ->addLanguage(new BashLanguage())
+                    ))
+                    ->addExtension(new TableExtension())
+                    ->addExtension(new StlModelViewerExtension())
+                    ->addExtension(new StrikethroughExtension())
+                    ->addExtension(new AttributesExtension())
+                )
+                ->convert($markdownSource);
 
-        return $this->postCache = new MarkdownConverter($environment)
-            ->convert($markdownSource);
+            if (is_dir(self::CACHE_DIRECTORY) === false) {
+                mkdir(self::CACHE_DIRECTORY, recursive: true);
+            }
+
+            file_put_contents($cachePath, serialize($parsedMarkdown), LOCK_EX);
+        }
+
+        return $this->parsedMarkdownCache = $parsedMarkdown;
+    }
+
+    private function getCachePath(string $markdownSource): string
+    {
+        $commonMarkVersion = InstalledVersions::getVersion('league/commonmark');
+
+        return self::CACHE_DIRECTORY . '/' . hash('sha256', $commonMarkVersion . "\0" . $markdownSource);
     }
 
     public function getPublishedAt(): DateTimeImmutable
@@ -115,7 +145,7 @@ final class Post implements Stringable
     {
         $nodes = new Query()
             ->where(Query::type(Tag::class))
-            ->findAll($this->parseMarkdown()->getDocument());
+            ->findAll($this->parsedMarkdown()->getDocument());
 
         $tags = array_map(
             fn(Tag $tag): string => $tag->getLiteral(),
@@ -131,20 +161,20 @@ final class Post implements Stringable
     {
         return new Query()
             ->where(Query::type(Heading::class))
-            ->findOne($this->parseMarkdown()->getDocument())
+            ->findOne($this->parsedMarkdown()->getDocument())
             ?->firstChild()
             ->getLiteral() ?? throw new \Exception('No title found');
     }
 
     public function getBody(): string
     {
-        $content = $this->parseMarkdown()->getContent();
+        $content = $this->parsedMarkdown()->getContent();
 
-        foreach ($this->frameInjections as $key => $iframeHtml) {
-            $content = str_replace('<p>' . $key . '</p>', $iframeHtml, $content);
+        $this->contentInjections['CSP_NONCE'] = CSP_NONCE;
+
+        foreach ($this->contentInjections as $key => $output) {
+            $content = preg_replace('/(?:<p>)?' . preg_quote($key, '/') . '(?:<\/p>)?/', $output, $content);
         }
-
-        $content = str_replace('CSP_NONCE', CSP_NONCE, $content);
 
         if (str_contains($content, '<x-audio')) {
             $content .= '<script src="/assets/📻.js" defer></script>';
