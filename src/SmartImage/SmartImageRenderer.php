@@ -11,6 +11,7 @@ use League\CommonMark\Renderer\ChildNodeRendererInterface;
 use League\CommonMark\Renderer\NodeRendererInterface;
 use League\CommonMark\Util\HtmlElement;
 use League\CommonMark\Util\RegexHelper;
+use League\CommonMark\Util\Xml;
 use League\CommonMark\Xml\XmlNodeRendererInterface;
 use League\Config\ConfigurationAwareInterface;
 use League\Config\ConfigurationInterface;
@@ -32,6 +33,9 @@ final class SmartImageRenderer implements NodeRendererInterface, XmlNodeRenderer
         Image::assertInstanceOf($node);
 
         $attrs = $node->data->get('attributes');
+
+        $caption = $attrs['caption'] ?? null;
+        unset($attrs['caption']);
 
         $forbidUnsafeLinks = ! $this->config->get('allow_unsafe_links');
         if ($forbidUnsafeLinks && RegexHelper::isLinkPotentiallyUnsafe($node->getUrl())) {
@@ -64,7 +68,17 @@ final class SmartImageRenderer implements NodeRendererInterface, XmlNodeRenderer
             $attrs['loading'] = 'lazy';
         }
 
-        return new HtmlElement('img', $attrs, '', true);
+        $img = new HtmlElement('img', $attrs, '', true);
+
+        if ($caption === null) {
+            return $img;
+        }
+
+        return new HtmlElement(
+            'figure',
+            [],
+            [$img, new HtmlElement('figcaption', [], Xml::escape($caption))],
+        );
     }
 
     public function setConfiguration(ConfigurationInterface $configuration): void

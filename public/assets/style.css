@@ -243,6 +243,7 @@ body > article {
 body > article:has(
 		x-body > :last-child > img,
 		x-body > :last-child > video,
+		x-body > :last-child > figure,
 		x-body > pre:last-child,
 		x-body > .full-bleed:last-child,
 		x-body > :last-child > x-3d-model,
@@ -340,9 +341,37 @@ body > article x-body table tr th:first-child {
 
 body > article x-body img,
 body > article x-body video,
-body > article x-body svg {
+body > article x-body svg,
+body > article x-body figure {
 	background: #fafafa;
 	margin: 20px 0;
+}
+
+body > article x-body figure {
+	position: relative;
+	display: block;
+	margin: 20px 0;
+}
+
+body > article x-body figure > img:has(+ figcaption) {
+	width: 100%;
+	display: block;
+	margin: 0;
+	background: none;
+}
+
+body > article x-body figure > img + figcaption {
+	position: absolute;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	display: block;
+	text-align: center;
+	font-size: 0.85rem;
+	font-style: italic;
+	color: #fff;
+	background: rgba(0, 0, 0, 0.3);
+	padding: 3px 0;
 }
 
 body > article x-body > blockquote {
@@ -412,7 +441,8 @@ body > article x-body video,
 body > article x-body x-3d-model,
 body > article x-body table,
 body > article x-body svg,
-body > article x-body x-audio {
+body > article x-body x-audio,
+body > article x-body figure {
 	width: calc(100% + 140px);
 	margin-right: -70px;
 	margin-left: -70px;
@@ -433,7 +463,8 @@ body > article x-body x-audio {
 	body > article x-body video,
 	body > article x-body x-3d-model,
 	body > article x-body svg,
-	body > article x-body x-audio {
+	body > article x-body x-audio,
+	body > article x-body figure {
 		margin-right: -20px;
 		margin-left: -20px;
 		width: calc(100% + 40px);
@@ -441,6 +472,10 @@ body > article x-body x-audio {
 
 	body > article x-body img {
 		max-height: 250px;
+	}
+
+	body > article x-body figure img + figcaption {
+		padding: 10px 20px;
 	}
 }
 
