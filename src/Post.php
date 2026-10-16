@@ -46,13 +46,21 @@ final class Post implements Stringable
 
         $markdownSource = file_get_contents($this->filePath);
 
-        // Evaluate all PHP code blocks which have the magic eval comment
+        // Evaluate all PHP code blocks which have the magic eval comment.
+        // If a language (`//[eval:html]`) is included, then the output is rendered as a markdown code block.
         $markdownSource = preg_replace_callback(
-            "#```php\n//\[eval\](?<code>.+?)```#s",
+            "#```php\n//\[eval(?::(?<language>\w+))?\](?<code>.+?)```#s",
             function (array $matches): string {
                 ob_start();
                 eval($matches['code']);
                 $content = ob_get_clean();
+
+                if ($matches['language'] !== '') {
+                    $content = $this
+                        ->markdownConverter()
+                        ->convert("```" . $matches['language'] . "\n" . trim($content) . "\n```")
+                        ->getContent();
+                }
 
                 $placeholder = "--INJECTION:" . count($this->contentInjections);
                 $this->contentInjections[$placeholder] = $content;
@@ -99,22 +107,7 @@ final class Post implements Stringable
             $parsedMarkdown = unserialize(file_get_contents($cachePath), ['allowed_classes' => true]);
         }
         else {
-            $parsedMarkdown = new MarkdownConverter(
-                new Environment()
-                    ->addExtension(new CommonMarkCoreExtension())
-                    ->addExtension(new SmartImageExtension())
-                    ->addExtension(new MarkdownTagExtension())
-                    ->addExtension(new HighlightExtension(
-                        new Highlighter()
-                            ->addLanguage(new OpenscadLanguage())
-                            ->addLanguage(new BashLanguage())
-                    ))
-                    ->addExtension(new TableExtension())
-                    ->addExtension(new StlModelViewerExtension())
-                    ->addExtension(new StrikethroughExtension())
-                    ->addExtension(new AttributesExtension())
-                )
-                ->convert($markdownSource);
+            $parsedMarkdown = $this->markdownConverter()->convert($markdownSource);
 
             if (is_dir(self::CACHE_DIRECTORY) === false) {
                 mkdir(self::CACHE_DIRECTORY, recursive: true);
@@ -124,6 +117,25 @@ final class Post implements Stringable
         }
 
         return $this->parsedMarkdownCache = $parsedMarkdown;
+    }
+
+    private function markdownConverter(): MarkdownConverter
+    {
+        return new MarkdownConverter(
+            new Environment()
+                ->addExtension(new CommonMarkCoreExtension())
+                ->addExtension(new SmartImageExtension())
+                ->addExtension(new MarkdownTagExtension())
+                ->addExtension(new HighlightExtension(
+                    new Highlighter()
+                        ->addLanguage(new OpenscadLanguage())
+                        ->addLanguage(new BashLanguage())
+                ))
+                ->addExtension(new TableExtension())
+                ->addExtension(new StlModelViewerExtension())
+                ->addExtension(new StrikethroughExtension())
+                ->addExtension(new AttributesExtension())
+        );
     }
 
     private function getCachePath(string $markdownSource): string
